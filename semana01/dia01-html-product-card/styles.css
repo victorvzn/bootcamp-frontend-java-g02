@@ -85,3 +85,19 @@ main {
 .content s {
   color: hsl(228, 12%, 48%);
 }
+
+.content button {
+  border: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  padding: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 7px;
+}

@@ -96,7 +96,7 @@ img {
 /* HERO */
 
 .hero {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   margin: 0 auto;
 
@@ -126,5 +126,48 @@ img {
 }
 
 .hero__button {
-  
+  /* border: 1px solid red; */
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  border: 0;
+  border-radius: 7rem;
+  padding: 1rem 1.5rem;
+  min-width: 220px;
+  color: var(--neutral-white);
+  background: linear-gradient(
+    90deg,
+    var(--accent-cyan-gradient) 0%,
+    var(--accent-blue-gradient) 100%
+  );
+  cursor: pointer;
+}
+
+.hero__button:hover {
+  background: var(--accent-blue-gradient);
+}
+
+/* FEATURES */
+
+.features {
+  display: grid;
+  grid-template-columns: 340px 340px;
+  justify-content: center;
+  gap: 5rem;
+  background-color: var(--primary-dark-blue-main);
+}
+
+.feature {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature__title {
+  font-family: var(--font-primary);
+}
+
+.feature__text {
+  font-family: var(--font-secondary);
 }

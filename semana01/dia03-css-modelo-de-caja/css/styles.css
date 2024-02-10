@@ -290,3 +290,21 @@ img {
   flex-direction: column;
   gap: 2rem;
 }
+
+.testimonial p {
+  width: 21rem;
+}
+
+.testimonial img {
+  border-radius: 50%;
+}
+
+.testimonial_profile {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.testimonial_profile h5 {
+  font-weight: var(--font-weight-regular);
+}

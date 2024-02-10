@@ -33,6 +33,11 @@
 
 /* GENERAL */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 html {
   font-size: var(--font-size);
 }
@@ -47,6 +52,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* UTILS */
@@ -81,4 +91,40 @@ a {
   display: flex;
   gap: 2rem; /* 2rem = 2 * 14px = 28px */
   align-items: center;
+}
+
+/* HERO */
+
+.hero {
+  border: 1px solid red;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  text-align: center;
+}
+
+.hero__title {
+  width: min(100% - 3rem, 720px);
+
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.hero__text {
+  width: min(100% - 3rem, 720px);
+
+  font-family: var(--font-secondary);
+  padding: 0 7rem;
+  line-height: 1.5;
+}
+
+.hero__button {
+  
 }

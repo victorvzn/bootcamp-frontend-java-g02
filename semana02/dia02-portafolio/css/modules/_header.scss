@@ -1,7 +1,7 @@
 /* HEADER */
 
 .header {
-  border: 1px solid red;
+  // border: 1px solid red;
 
   display: flex;
   justify-content: space-between;
@@ -22,9 +22,26 @@
   }
 
   &__menu a {
-    color: $primary-color-white;
     font-size: 1.125rem; /* 1.125rem * 16px = 18px */
     font-weight: $font-weight-semibold;
     text-transform: capitalize;
   }
+}
+
+.header__menu--active,
+.header__menu a:hover {
+  color: $primary-color-gold;
+  border-bottom: 2px solid $primary-color-gold;
+}
+
+.header__links {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.header__links--active {
+  background-color: $primary-color-blue1;
+  padding: .3rem;
+  border-radius: 100%;
 }

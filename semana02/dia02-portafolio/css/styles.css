@@ -27,4 +27,27 @@ a {
   margin: 0 auto;
 }
 
-/* HEADER *//*# sourceMappingURL=styles.css.map */
+/* HEADER */
+.header {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  color: #FFB742;
+  font-size: 2rem; /* 1rem = 16px */
+  font-weight: 700;
+}
+.header__menu {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.5rem;
+  margin: 2rem;
+}
+.header__menu a {
+  color: #FFFFFF;
+  font-size: 1.125rem; /* 1.125rem * 16px = 18px */
+  font-weight: 600;
+  text-transform: capitalize;
+}/*# sourceMappingURL=styles.css.map */

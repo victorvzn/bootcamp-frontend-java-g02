@@ -397,6 +397,6 @@ console.log(esMayorOMenorDeEdadConRetorno(25))
 console.log(esMayorOMenorDeEdadConRetorno(15))
 
 // PROMPT para leer valores del usuario
-const tuEdad = prompt('Ingresa tu edad')
+// const tuEdad = prompt('Ingresa tu edad')
 
-console.log(tuEdad)
+// console.log(tuEdad)

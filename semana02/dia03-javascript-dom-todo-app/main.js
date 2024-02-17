@@ -12,6 +12,27 @@ const taskList = document.querySelector('.task__list')
 
 taskAdd.addEventListener('click', function (event) {
   // Se ejecutará cuando hagamos click en el botón "Añadir tarea"
-  console.log('Click!')
+  // console.log('Click!')
+
+  // console.log(taskInput.value)
+
+  // const button = document.createElement('button')
+  // button.textContent = 'Hola soy un botón'
+  // document.body.appendChild(button)
+
+  if (taskInput.value === '') {
+    alert('El campo es requerido')
+    return
+  }
+
+  const li = document.createElement('li')
+
+  const span = document.createElement('span')
+  span.textContent = taskInput.value
+  li.appendChild(span)
+
+  taskList.appendChild(li)
+
+  taskInput.value = ''
 })
 

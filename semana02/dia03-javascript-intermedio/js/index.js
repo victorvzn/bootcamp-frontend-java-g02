@@ -116,4 +116,47 @@ console.log(miObjeto.coloresFavoritos[2])
 console.log(miObjeto.cursos)
 console.log(miObjeto.cursos[1])
 console.log(miObjeto.cursos[1].nombre)
+console.log(miObjeto.cursos[1])
 console.log(miObjeto.cursos[1]['nota'])
+console.log(miObjeto.cursos[1].nota)
+
+// ELIMINAR PROPIEDADES DE UN OBJETO
+
+console.log(miObjeto)
+delete miObjeto.colorFavorito
+console.log(miObjeto)
+
+// INSERTAR UNA NUEVA PROPEDAD A UN OBJETO
+
+miObjeto.platoFavorito = 'Ceviche de Conchas Negras'
+miObjeto['juegos favoritos'] = ['Crash Team Racing', 'Mario', 'Minecraft']
+
+console.log(miObjeto)
+
+// DESTRUCTURING
+
+// Una forma de extraer las propiedade/elemetos de un objeto o un arreglo en variables
+
+// DESTRUCTURING PARA OBJETOS
+
+const nombreValue = miObjeto.nombre
+const apellidoValue = miObjeto.apellido
+const cursosValue = miObjeto.cursos
+
+console.log(nombreValue, apellidoValue, cursosValue)
+
+const { nombre, apellido, coloresFavoritos } = miObjeto
+
+console.log(nombre, apellido, coloresFavoritos)
+
+const { nombre: nombreValor , apellido: apellidoValor } = miObjeto
+
+console.log(nombreValor, apellidoValor)
+
+// DESTRUCTURING PARA ARREGLOS
+
+const amigos = ['laura', 'edison', 'abel', 'irvin', 'brayan']
+
+const [amigo1, amigo2, , , amigo3] = amigos
+
+console.log(amigo1, amigo2, amigo3)

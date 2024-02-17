@@ -23,3 +23,31 @@ console.log(listaDeValores[4]) // Villazón
 console.log(listaDeValores[5]) // true
 console.log(listaDeValores[100]) // undefined
 
+// Escritura en un arreglo
+
+listaDeValores[2] = 99
+
+console.log(listaDeValores)
+
+// Insertar nuevos elementos en un arreglo
+
+listaDeValores.push('javascript')
+
+console.log(listaDeValores)
+
+// Remover elementos del final del arreglo
+
+listaDeValores.pop()
+
+console.log(listaDeValores)
+
+// Eliminar un elemento
+
+listaDeValores.splice(4, 1)
+
+console.log(listaDeValores)
+
+// Obtener el tamaño de nuestro arreglo
+
+console.log(listaDeValores.length)
+console.log('bienvenido'.length)

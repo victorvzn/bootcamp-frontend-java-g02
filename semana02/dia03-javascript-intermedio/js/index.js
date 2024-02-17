@@ -51,3 +51,23 @@ console.log(listaDeValores)
 
 console.log(listaDeValores.length)
 console.log('bienvenido'.length)
+
+// MÉTODOS DE ARREGLOS
+
+// Método INCLUDES, nos indica si el valor que se pasa como parámetro se encuentra en el arreglo y devuelve un boolean(true o false)
+
+const languages = ['javascript', 'php', 'python', 'C', 'c++', 'java', 'python']
+
+console.log(languages.includes('java'))
+console.log(languages.includes('cobol'))
+
+// Método FILTER, nos ayuda a ubicar un elemento dentro de un arreglo usando una condición y devuelve un arreglo con los resultados
+
+const resultado = languages.filter(function (language) {
+  // return language === 'java' // ['java']
+  // return language.includes('c') // ['javascript', 'c++']
+  return language.toLowerCase().includes('c') //['javascript', 'C', 'c++']
+})
+
+console.log(resultado)
+console.log(languages)

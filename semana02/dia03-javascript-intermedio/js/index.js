@@ -160,3 +160,40 @@ const amigos = ['laura', 'edison', 'abel', 'irvin', 'brayan']
 const [amigo1, amigo2, , , amigo3] = amigos
 
 console.log(amigo1, amigo2, amigo3)
+
+// SPREAD OPERATOS (operador ...)
+
+// Extrae propiedades de un objeto/arreglo para reutilizar en otros objetos/arreglos
+
+const producto = {
+  nombre: 'Laptop',
+  precio: 6800,
+  categoria: 'tech'
+}
+
+const cliente = {
+  nombre: 'Laura',
+  isVip: true
+}
+
+console.log(producto + cliente) // [object Object][object Object] ❌
+
+const nuevoObjeto = { ...producto, ...cliente }
+
+console.log(nuevoObjeto)
+
+// SPREAD OPERATOR EVITANDO COLISIONES
+
+const nuevoObjetoSinColisiones = {
+  producto: { ...producto },
+  cliente: { ...cliente },
+}
+
+console.log(nuevoObjetoSinColisiones)
+
+// OTROS MÉTODOS DE OBJETOS
+
+console.log(Object.keys(producto)) // Obtenemos solo las claves(keys) del objeto
+console.log(Object.values(producto)) // Obtenemos solo los valores(values) del objeto
+console.log(Object.entries(producto)) // Convertimos un objeto en arreglo
+

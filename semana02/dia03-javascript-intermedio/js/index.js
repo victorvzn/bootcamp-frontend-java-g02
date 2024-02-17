@@ -58,8 +58,8 @@ console.log('bienvenido'.length)
 
 const languages = ['javascript', 'php', 'python', 'C', 'c++', 'java', 'python']
 
-console.log(languages.includes('java'))
-console.log(languages.includes('cobol'))
+console.log(languages.includes('java')) // true
+console.log(languages.includes('cobol')) // false
 
 // Método FILTER, nos ayuda a ubicar un elemento dentro de un arreglo usando una condición y devuelve un arreglo con los resultados
 
@@ -71,3 +71,49 @@ const resultado = languages.filter(function (language) {
 
 console.log(resultado)
 console.log(languages)
+
+// OBJETOS
+
+// {
+//   KEY: VALUE,
+//   KEY: VALUE,
+// }
+
+const miObjetoVacio = {}
+
+const miObjeto = {
+  nombre: 'Victor',
+  apellido: 'Villazón',
+  colorFavorito: 'azúl',
+  'mi edad': 37,
+  coloresFavoritos: ['rosado', 'rojo', 'azúl'],
+  cursos: [
+    {
+      nombre: 'Matemática',
+      nota: 18
+    },
+    {
+      nombre: 'Algoritmos',
+      nota: 20
+    }
+  ]
+}
+
+console.log(miObjeto)
+
+// LEER LOS CAMPOS DE UN OBJETO
+
+console.log(miObjeto.nombre) // Victor
+console.log(miObjeto.apellido) // Villazón
+console.log(miObjeto.edad) // undefined
+
+// console.log(miObjeto.mi edad) // BAD ❌ - Uncaught SyntaxError: missing ) after argument list
+console.log(miObjeto['mi edad']) // OK  ✅
+
+console.log(miObjeto.coloresFavoritos)
+console.log(miObjeto.coloresFavoritos[2])
+
+console.log(miObjeto.cursos)
+console.log(miObjeto.cursos[1])
+console.log(miObjeto.cursos[1].nombre)
+console.log(miObjeto.cursos[1]['nota'])

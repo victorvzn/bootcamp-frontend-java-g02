@@ -37,22 +37,60 @@
 
 // ANIDANDO COMPONENTES DENTRO DE OTROS
 
-function Saludo() {
-  return <h1>Hola Victor</h1>
-}
+// function Saludo() {
+//   return <h1>Hola Victor</h1>
+// }
 
-function Despedida() {
-  return <h1>Adios Victor</h1>
-}
+// function Despedida() {
+//   return <h1>Adios Victor</h1>
+// }
+
+// const App = () => {
+//   return (
+//     <>
+//       <h1>Hola React!</h1>
+//       <p>Estoy en el bootcamp!</p>
+//       {/* Comentario en react dentro de JSX */}
+
+//       <Saludo />
+//       <Despedida />
+//     </>
+//   )
+// }
+
+// IMPORTANDO COMPONENTES EXTERNOS
+
+// import Saludos from './components/Saludos'
+// import Despedida from './components/Despedida'
+
+// const App = () => {
+//   return (
+//     <>
+//       <h1>Hola React!</h1>
+//       <p>Estoy en el bootcamp!</p>
+//       {/* Comentario en react dentro de JSX */}
+
+//       <Saludos />
+//       <Despedida />
+//     </>
+//   )
+// }
+
+// USANDO CSS EN REACT
+
+import Saludos from './components/Saludos'
+import Despedida from './components/Despedida'
+
+import './demo.css' // IMportando css global
 
 const App = () => {
   return (
     <>
-      <h1>Hola React!</h1>
-      <p>Estoy en el bootcamp!</p>
+      <h1 style={{ color: 'red', textDecoration: 'underline', backgroundColor: '#ddd' }}>Hola React!</h1>
+      <p className="parrafo">Estoy en el bootcamp!</p>
       {/* Comentario en react dentro de JSX */}
 
-      <Saludo />
+      <Saludos />
       <Despedida />
     </>
   )

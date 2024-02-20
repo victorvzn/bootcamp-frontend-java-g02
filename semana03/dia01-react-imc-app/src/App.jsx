@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ImcImage from './assets/imc.webp'
 
 const App = () => {
   const [weight, setWeight] = useState(0)
@@ -71,6 +72,12 @@ const App = () => {
           Estado de IMC: {bodyMassIndexResult()}
         </p>
 
+        {/* <img
+          className="mt-5"
+          src="https://static.tuasaude.com/media/article/me/dr/imc_15748_l.jpg"
+        /> */}
+
+        <img className="mt-5" src={ImcImage} />
       </div>
     </section>
   )

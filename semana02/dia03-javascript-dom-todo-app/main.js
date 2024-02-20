@@ -56,5 +56,9 @@ taskList.addEventListener('click', function(event) {
   if (target.tagName === 'BUTTON') {
     target.parentElement.remove()
   }
+
+  if (target.tagName === 'INPUT' && target.type === 'checkbox') {
+    target.classList.toggle('completed')
+  }
 })
 

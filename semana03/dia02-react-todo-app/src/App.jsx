@@ -27,6 +27,15 @@ const App = () => {
     >
       <h1 className="text-2xl font-bold text-center">TODO APP</h1>
 
+      <form>
+        <input
+          type="text"
+          placeholder="¿Qué deseas hacer hoy?"
+          required
+          className="w-full border my-3 p-3 rounded-lg"
+        />
+      </form>
+
       {/* <pre className="border bg-slate-50 rounded-md">{JSON.stringify(todos, null, 2)}</pre> */}
     </main>
   )

@@ -73,6 +73,13 @@ const App = () => {
     setTodos(newTodos)
   }
 
+  const completedTodos = todos.filter(todo => todo.completed === true)
+
+  const handleClearTodos = () => {
+    // TODO: Necesitamos remover las tareas que estan completadas
+    
+  }
+
   return (
     <main
       className="bg-yellow-100 w-full max-w-sm mx-auto mt-10 border border-yellow-600 rounded-lg p-4 shadow-2xl"
@@ -93,10 +100,11 @@ const App = () => {
 
       <div className="flex justify-between items-center">
         <span className="font-bold">
-          2 de 5
+          {completedTodos.length} de {todos.length}
         </span>
         <button
           className="bg-blue-500 rounded-lg px-2 py-1 text-white hover:bg-blue-700 duration-300"
+          onClick={handleClearTodos}
         >
           Limpiar tareas completadas
         </button>

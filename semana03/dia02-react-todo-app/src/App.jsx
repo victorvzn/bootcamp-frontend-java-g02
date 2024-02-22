@@ -47,6 +47,43 @@ const App = () => {
         </button>
       </div>
 
+      <section className="mt-4">
+        <ul className="flex flex-col gap-2">
+          <li className="flex">
+            <input
+              className="mr-2"
+              type="checkbox"
+            />
+            <div className="w-full flex justify-between items-center">
+              <div className="line-through">
+                Tarea 1
+              </div>
+              <button
+                className="bg-red-300 rounded-lg px-1 py-1"
+              >
+                ❌
+              </button>
+            </div>
+          </li>
+          <li className="flex">
+            <input
+              className="mr-2"
+              type="checkbox"
+            />
+            <div className="w-full flex justify-between items-center">
+              <div className="line-through">
+                Tarea 1
+              </div>
+              <button
+                className="bg-red-300 rounded-lg px-1 py-1"
+              >
+                ❌
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
       {/* <pre className="border bg-slate-50 rounded-md">{JSON.stringify(todos, null, 2)}</pre> */}
     </main>
   )

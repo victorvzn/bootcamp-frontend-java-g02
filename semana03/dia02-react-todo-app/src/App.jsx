@@ -56,6 +56,23 @@ const App = () => {
     setTodos(newTodos)
   }
 
+  const handleCompleteTodo = (event) => {
+    // console.log('Completando tarea...')
+
+    const idSelected = event.target.dataset.id
+    const isChecked = event.target.checked
+
+    const newTodos = todos.map(todo => {
+      if (todo.id === idSelected) {
+        return { ...todo, completed: isChecked }
+      }
+
+      return todo
+    })
+
+    setTodos(newTodos)
+  }
+
   return (
     <main
       className="bg-yellow-100 w-full max-w-sm mx-auto mt-10 border border-yellow-600 rounded-lg p-4 shadow-2xl"
@@ -93,6 +110,9 @@ const App = () => {
                 <input
                   className="mr-2"
                   type="checkbox"
+                  data-id={todo.id}
+                  onChange={handleCompleteTodo}
+                  checked={todo.completed}
                 />
                 <div className="w-full flex justify-between items-center">
                   <div className={todo.completed ? 'line-through' : ''}>

@@ -45,6 +45,16 @@ const App = () => {
 
     setInput('')
   }
+  
+  const handleRemoveTodo = (event) => {
+    const idSelected = event.target.dataset.id
+
+    // console.log('Eliminando una tarea..', idSelected)
+
+    const newTodos = todos.filter(todo => todo.id !== idSelected)
+
+    setTodos(newTodos)
+  }
 
   return (
     <main
@@ -90,6 +100,8 @@ const App = () => {
                   </div>
                   <button
                     className="bg-red-300 rounded-lg px-1 py-1"
+                    data-id={todo.id}
+                    onClick={handleRemoveTodo}
                   >
                     ❌
                   </button>

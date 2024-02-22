@@ -20,6 +20,15 @@ const App = () => {
   ]
 
   const [todos, setTodos] = useState(DEFAULT_TODOS)
+  const [input, setInput] = useState('')
+
+  const handleChange = (event) => {
+    // Estamos capturando lo que escribimos en la caja de texto
+    // console.log(event.target.value)
+    const value = event.target.value
+
+    setInput(value)
+  }
 
   return (
     <main
@@ -33,7 +42,9 @@ const App = () => {
           placeholder="¿Qué deseas hacer hoy?"
           required
           className="w-full border my-3 p-3 rounded-lg"
+          onChange={handleChange}
         />
+        {input}
       </form>
 
       <div className="flex justify-between items-center">

@@ -51,13 +51,13 @@ const App = () => {
         <ul className="flex flex-col gap-2">
           {todos.map(todo => {
             return (
-              <li className="flex">
+              <li className="flex" key={todo.id}>
                 <input
                   className="mr-2"
                   type="checkbox"
                 />
                 <div className="w-full flex justify-between items-center">
-                  <div className="">
+                  <div className={todo.completed ? 'line-through' : ''}>
                     {todo.title}
                   </div>
                   <button

@@ -1,25 +1,29 @@
 import { useState } from "react"
 
-const App = () => {
-  const DEFAULT_TODOS = [
-    {
-      id: '1',
-      title: 'Aprender Javascript',
-      completed: false
-    },
-    {
-      id: '2',
-      title: 'Aprender Java',
-      completed: true
-    },
-    {
-      id: '3',
-      title: 'Aprender CSS y HTML',
-      completed: false
-    }
-  ]
+// TODO: Realizar la edición de una tarea usando un boton de edición
 
-  const [todos, setTodos] = useState(DEFAULT_TODOS)
+const App = () => {
+  // const DEFAULT_TODOS = [
+  //   {
+  //     id: '1',
+  //     title: 'Aprender Javascript',
+  //     completed: false
+  //   },
+  //   {
+  //     id: '2',
+  //     title: 'Aprender Java',
+  //     completed: true
+  //   },
+  //   {
+  //     id: '3',
+  //     title: 'Aprender CSS y HTML',
+  //     completed: false
+  //   }
+  // ]
+
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem('todos')) || []
+  )
   const [input, setInput] = useState('')
 
   const handleChange = (event) => {
@@ -41,7 +45,11 @@ const App = () => {
       completed: false,
     }
 
-    setTodos([...todos, newTodo])
+    const updatedTodos = [...todos, newTodo]
+
+    setTodos(updatedTodos)
+
+    localStorage.setItem('todos', JSON.stringify(updatedTodos))
 
     setInput('')
   }
@@ -54,6 +62,8 @@ const App = () => {
     const newTodos = todos.filter(todo => todo.id !== idSelected)
 
     setTodos(newTodos)
+
+    localStorage.setItem('todos', JSON.stringify(newTodos))
   }
 
   const handleCompleteTodo = (event) => {
@@ -71,13 +81,22 @@ const App = () => {
     })
 
     setTodos(newTodos)
+
+    localStorage.setItem('todos', JSON.stringify(newTodos))
   }
 
   const completedTodos = todos.filter(todo => todo.completed === true)
 
   const handleClearTodos = () => {
-    // TODO: Necesitamos remover las tareas que estan completadas
-    
+    // DONE: Necesitamos remover las tareas que estan completadas
+
+    console.log('limpiando tareas...')
+
+    const imcompletedTodos = todos.filter(todo => todo.completed === false)
+
+    setTodos(imcompletedTodos)
+
+    localStorage.setItem('todos', JSON.stringify(imcompletedTodos))
   }
 
   return (

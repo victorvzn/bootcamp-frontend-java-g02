@@ -36,6 +36,17 @@ const App = () => {
         />
       </form>
 
+      <div className="flex justify-between items-center">
+        <span className="font-bold">
+          2 de 5
+        </span>
+        <button
+          className="bg-blue-500 rounded-lg px-2 py-1 text-white hover:bg-blue-700 duration-300"
+        >
+          Limpiar tareas completadas
+        </button>
+      </div>
+
       {/* <pre className="border bg-slate-50 rounded-md">{JSON.stringify(todos, null, 2)}</pre> */}
     </main>
   )

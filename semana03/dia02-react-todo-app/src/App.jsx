@@ -30,21 +30,38 @@ const App = () => {
     setInput(value)
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    // console.log('Estoy procesando el formulario')
+
+    const newTodo = {
+      id: crypto.randomUUID(),
+      title: input,
+      completed: false,
+    }
+
+    setTodos([...todos, newTodo])
+
+    setInput('')
+  }
+
   return (
     <main
       className="bg-yellow-100 w-full max-w-sm mx-auto mt-10 border border-yellow-600 rounded-lg p-4 shadow-2xl"
     >
       <h1 className="text-2xl font-bold text-center">TODO APP</h1>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="¿Qué deseas hacer hoy?"
           required
           className="w-full border my-3 p-3 rounded-lg"
           onChange={handleChange}
+          value={input}
         />
-        {input}
+        {/* {input} */}
       </form>
 
       <div className="flex justify-between items-center">

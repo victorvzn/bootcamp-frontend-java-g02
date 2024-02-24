@@ -1,9 +1,20 @@
-const Header = () => {
+const Header = ({ title }) => {
   return (
     <h1 className="text-4xl text-center mt-4">
-      Citas médicas para mascotas
+      {title}
     </h1>
   )
 }
 
 export default Header
+
+
+// const Header = (props) => {
+//   return (
+//     <h1 className="text-4xl text-center mt-4">
+//       {props.title}
+//     </h1>
+//   )
+// }
+
+// export default Header

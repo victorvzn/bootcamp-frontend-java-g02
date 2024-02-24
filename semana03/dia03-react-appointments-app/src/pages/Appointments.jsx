@@ -50,6 +50,47 @@ const Appointments = () => {
           />
         </form>
       </section>
+
+      <section>
+        <h2>Listado de Citas</h2>
+
+        <div>
+          <div>
+            <div>
+              <h4>Mascota</h4>
+              <div>
+                <strong>Nombre:</strong> petName
+              </div>
+              <div>
+                <strong>Edad (años):</strong> petAge
+              </div>
+            </div>
+            <div>
+              <h4>Dueño</h4>
+              <div>
+                <strong>Nombre:</strong> ownerName
+              </div>
+            </div>
+            <div>
+              <h4>Citas</h4>
+              <div>
+                <strong>Fecha:</strong> appointmentDate
+              </div>
+              <div>
+                <strong>Hora:</strong> appointmentTime
+              </div>
+              <div>
+                <strong>Síntomas:</strong> symptoms
+              </div>
+            </div>
+            <div>
+              <button>Confirmar cita</button>
+              <button>Editar</button>
+              <button>Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

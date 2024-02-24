@@ -14,6 +14,16 @@ const Appointments = () => {
     setAppointments([...appointments, form])
   }
 
+  const handleRemove = (id) => {
+    console.log('handleREmove', id)
+
+    const newAppointments = appointments.filter(
+      appointment => appointment.id !== id
+    )
+
+    setAppointments(newAppointments)
+  }
+
   return (
     <>
       {/* {JSON.stringify(appointments)} */}
@@ -24,6 +34,7 @@ const Appointments = () => {
 
       <AppointmentsList
         appointments={appointments}
+        onRemove={handleRemove}
       />
     </>
   )

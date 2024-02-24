@@ -1,4 +1,4 @@
-const AppointmentsList = ({ appointments }) => {
+const AppointmentsList = ({ appointments, onRemove }) => {
   return (
     <section className="w-1/2 p-4 rounded-lgs">
       <h2 className="text-2xl text-center mb-4">Listado de Citas</h2>
@@ -44,7 +44,10 @@ const AppointmentsList = ({ appointments }) => {
                 <button className="p-2 bg-sky-600 text-white rounded-lg cursor-pointer">
                   Editar
                 </button>
-                <button className="p-2 bg-red-600 text-white rounded-lg cursor-pointer">
+                <button
+                  className="p-2 bg-red-600 text-white rounded-lg cursor-pointer"
+                  onClick={() => onRemove(appointment.id)}
+                >
                   Eliminar
                 </button>
               </div>

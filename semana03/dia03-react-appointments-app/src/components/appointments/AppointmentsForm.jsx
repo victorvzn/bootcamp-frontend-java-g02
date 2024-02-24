@@ -40,6 +40,7 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
     onSaveAppointment(newAppointment)
 
     // TODO: Limpiar el formulario después de guardar
+    setForm(INITIAL_FORM_STATE)
   }
 
   return (
@@ -53,6 +54,7 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
           placeholder="Nombre de mi mascota"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.petName}
         />
         <input
           type="number"
@@ -62,6 +64,7 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
           min="0"
           max="50"
           onChange={handleChange}
+          value={form.petAge}
         />
         <input
           type="text"
@@ -69,6 +72,7 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
           placeholder="Dueño de la mascota"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.ownerName}
         />
         <input
           type="date"
@@ -76,6 +80,7 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
           placeholder="Fecha de la cita"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.appointmentDate}
         />
         <input
           type="time"
@@ -83,6 +88,7 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
           placeholder="Fecha de la cita"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.appointmentTime}
         />
         <textarea
           name="symptoms"
@@ -90,6 +96,7 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
           className="border p-3 shadow-md rounded-md"
           rows="3"
           onChange={handleChange}
+          value={form.symptoms}
         />
         <input
           type="submit"

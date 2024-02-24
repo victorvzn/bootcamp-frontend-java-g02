@@ -1,7 +1,7 @@
-const Header = ({ title }) => {
+const Header = ({ title, subtitle }) => {
   return (
     <h1 className="text-4xl text-center mt-4">
-      {title}
+      {title} {subtitle}
     </h1>
   )
 }

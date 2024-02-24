@@ -1,4 +1,4 @@
-const AppointmentsList = ({ appointments, onRemove }) => {
+const AppointmentsList = ({ appointments, onRemove, onEdit }) => {
   return (
     <section className="w-1/2 p-4 rounded-lgs">
       <h2 className="text-2xl text-center mb-4">Listado de Citas</h2>
@@ -41,7 +41,10 @@ const AppointmentsList = ({ appointments, onRemove }) => {
                 <button className="p-2 bg-green-600 text-white rounded-lg cursor-pointer">
                   Confirmar cita
                 </button>
-                <button className="p-2 bg-sky-600 text-white rounded-lg cursor-pointer">
+                <button
+                  className="p-2 bg-sky-600 text-white rounded-lg cursor-pointer"
+                  onClick={() => onEdit(appointment)}
+                >
                   Editar
                 </button>
                 <button

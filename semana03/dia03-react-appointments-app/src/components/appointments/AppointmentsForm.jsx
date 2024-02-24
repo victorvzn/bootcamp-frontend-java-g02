@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const AppointmentsForm = ({ onSaveAppointment }) => {
+const AppointmentsForm = ({ onSaveAppointment, appointment }) => {
   const INITIAL_FORM_STATE = {
     id: '',
     petName: '',
@@ -12,6 +12,11 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
   }
 
   const [form, setForm] = useState(INITIAL_FORM_STATE)
+
+  useEffect(() => {
+    console.log('Estoy en el form y solo me ejecuto cuando la propiedad appoinment tiene datos')
+    setForm(appointment)
+  }, [appointment])
 
   const handleChange = (event) => {
     // console.log(event.target.name)
@@ -35,11 +40,13 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
       id: crypto.randomUUID()
     }
 
+    // TODO: Guardar en la misma cita cuando el usuario edite esa cita
+
     console.log('Guardando cita...', newAppointment)
 
     onSaveAppointment(newAppointment)
 
-    // TODO: Limpiar el formulario después de guardar
+    // DONE: Limpiar el formulario después de guardar
     setForm(INITIAL_FORM_STATE)
   }
 

@@ -6,7 +6,7 @@ export default function App() {
     <>
       <Header title="Citas médicas para mascotas" subtitle="subtitletext" />
 
-      <main className="container border mx-auto flex gap-12 py-5">
+      <main className="container border mx-auto flex gap-12 p-5">
         <Appointments />
       </main>
     </>

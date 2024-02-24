@@ -22,15 +22,27 @@ const AppointmentsForm = () => {
 
     const { name, value } = event.target
 
+    // Actualizamos el estado form en base al nombre del input
+
     setForm({ ...form, [name]: value })
+  }
+
+  const handleSaveAppointment = (event) => {
+    event.preventDefault(); // Para evitar que se haga un refresh de la página
+    
+    const newAppointment = {
+      ...form,
+      id: crypto.randomUUID()
+    }
+
+    console.log('Guardando cita...', newAppointment)
   }
 
   return (
     <section className="w-96 p-4">
       <h2 className="text-2xl text-center mb-4">Nuevo paciente</h2>
 
-
-      <form className="flex flex-col gap-4">
+      <form className="flex flex-col gap-4" onSubmit={handleSaveAppointment}>
         <input
           type="text"
           name="petName"

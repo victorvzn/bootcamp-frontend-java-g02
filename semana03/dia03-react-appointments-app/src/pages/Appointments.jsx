@@ -12,7 +12,7 @@ const Appointments = () => {
             className=""
           />
           <input
-            type="numer"
+            type="number"
             name="petAge"
             placeholder="Edad de la mascota"
             className=""
@@ -41,7 +41,7 @@ const Appointments = () => {
             name="symptoms"
             placeholder="Síntomas"
             className=""
-            rows={3}
+            rows="3"
           />
           <input
             type="submit"

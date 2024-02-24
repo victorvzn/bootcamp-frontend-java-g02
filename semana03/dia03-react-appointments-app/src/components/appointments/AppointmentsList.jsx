@@ -8,33 +8,33 @@ const AppointmentsList = ({ appointments }) => {
           return (
             <div
               className="border-2 border-sky-500 p-3 rounded-lg bg-sky-300"
-              key={appointment}
+              key={appointment.id}
             >
               <div className="mb-2">
                 <h4 className="font-semibold text-lg">Mascota</h4>
                 <div>
-                  <strong>Nombre:</strong> petName
+                  <strong>Nombre:</strong> {appointment.petName}
                 </div>
                 <div>
-                  <strong>Edad (años):</strong> petAge
+                  <strong>Edad (años):</strong>  {appointment.petAge}
                 </div>
               </div>
               <div className="mb-2">
                 <h4 className="font-semibold text-lg">Dueño</h4>
                 <div>
-                  <strong>Nombre:</strong> ownerName
+                  <strong>Nombre:</strong> {appointment.ownerName}
                 </div>
               </div>
               <div className="mb-2">
                 <h4 className="font-semibold text-lg">Citas</h4>
                 <div>
-                  <strong>Fecha:</strong> appointmentDate
+                  <strong>Fecha:</strong> {appointment.appointmentDate}
                 </div>
                 <div>
-                  <strong>Hora:</strong> appointmentTime
+                  <strong>Hora:</strong> {appointment.appointmentTime}
                 </div>
                 <div>
-                  <strong>Síntomas:</strong> symptoms
+                  <strong>Síntomas:</strong> {appointment.symptoms}
                 </div>
               </div>
               <div className="flex flex-col gap-3 mt-3">

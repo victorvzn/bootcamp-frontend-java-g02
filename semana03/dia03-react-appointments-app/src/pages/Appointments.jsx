@@ -4,13 +4,23 @@ import AppointmentsForm from "../components/appointments/AppointmentsForm"
 import AppointmentsList from "../components/appointments/AppointmentsList"
 
 const Appointments = () => {
-  const [appointments, setAppointments] = useState([1, 2, 3])
+  const [appointments, setAppointments] = useState([])
+
+  const handleSaveAppointment = (form) => {
+    // Guardamos lo que nos entregue el AppointmentForm en el estado appointments
+
+    console.log(form)
+
+    setAppointments([...appointments, form])
+  }
 
   return (
     <>
-      {JSON.stringify(appointments)}
+      {/* {JSON.stringify(appointments)} */}
 
-      <AppointmentsForm />
+      <AppointmentsForm
+        onSaveAppointment={handleSaveAppointment}
+      />
 
       <AppointmentsList
         appointments={appointments}

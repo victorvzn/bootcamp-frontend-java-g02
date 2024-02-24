@@ -1,4 +1,11 @@
+import AppointmentsListEmpty from "./AppointmentsListEmpty"
+
 const AppointmentsList = ({ appointments, onRemove, onEdit }) => {
+
+  if (appointments.length === 0) {
+    return <AppointmentsListEmpty />
+  }
+
   return (
     <section className="w-1/2 p-4 rounded-lgs">
       <h2 className="text-2xl text-center mb-4">Listado de Citas</h2>

@@ -15,13 +15,13 @@ export default function Header() {
         <nav className="flex gap-3">
           
           <Link
-            href='/'
+            href='/home/budget/new'
             className="hover:text-orange-800"
           >
             New budget
           </Link>
           <Link
-            href='/'
+            href='/home/budget/expense'
             className="hover:text-orange-800"
           >
             New Expense

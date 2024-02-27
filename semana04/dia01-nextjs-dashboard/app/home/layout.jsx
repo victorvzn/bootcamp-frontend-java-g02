@@ -5,7 +5,11 @@ export default function HomeLayout({ children }) {
     <>
       <Header />
 
-      {children}
+      <main className="m-6">
+        <div className="container mx-auto">
+          {children}
+        </div>
+      </main>
     </>
   )
 }

@@ -1,7 +1,23 @@
+'use client'
+
 import HeaderLogin from "@/components/HeaderLogin";
 import Link from "next/link";
 
+import { useState } from "react";
+
 export default function LoginPage() {
+  const initialState = {
+    email: '',
+    password: '',
+  }
+
+  const [form, setForm] = useState(initialState)
+
+  const handleChange = (event) => {
+    console.log(event.target.name, event.target.value)
+  }
+
+
   return (
     <>
       <HeaderLogin />
@@ -14,12 +30,26 @@ export default function LoginPage() {
             <p className="text-sm text-slate-600">Enter your email below to login your account.</p>
           </div>
 
+          {JSON.stringify(form)}
+
           <form className="flex flex-col gap-2 p-8">
             <label className="font-bold">Email</label>
-            <input className="border p-3 shadow-sm rounded-md" type="email" placeholder="jhondoe@mail.com" />
+            <input
+              className="border p-3 shadow-sm rounded-md"
+              type="email"
+              placeholder="jhondoe@mail.com"
+              name="email"
+              onChange={handleChange}
+            />
             
             <label className="font-bold">Password</label>
-            <input className="border p-3 shadow-sm rounded-sm" type="password" placeholder="Ej. supersecret" />
+            <input
+              className="border p-3 shadow-sm rounded-sm"
+              type="password"
+              placeholder="Ej. supersecret"
+              name="password"
+              onChange={handleChange}
+            />
             
             <button className="mt-4 border p-3 bg-sky-700 text-white rounded-md cursor-pointer">Login</button>
           </form>

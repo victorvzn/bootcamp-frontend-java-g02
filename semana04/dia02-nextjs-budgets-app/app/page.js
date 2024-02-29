@@ -27,17 +27,22 @@ export default function LoginPage() {
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const response = await login(form)
+    try {
+      const response = await login(form)
 
-    if (!response.token) {
-      // Redireccionamos al login nuevamente
-      router.push('/')
-      return
+      if (!response.token) {
+        // Redireccionamos al login nuevamente
+        router.push('/')
+        return
+      }
+
+      // redireccionar a la ruta /home
+      localStorage.setItem('auth-token', response.token)
+
+      router.push('/home')
+    } catch(error) {
+      console.log(error)
     }
-
-    // redireccionar a la ruta /home
-    router.push('/home')
-
     // console.log('enviando credenciales del usuario...')
   }
 

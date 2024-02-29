@@ -1,11 +1,15 @@
 'use client'
 
 import HeaderLogin from "@/components/HeaderLogin";
+import { login } from "@/services/auth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
 export default function LoginPage() {
+  const router = useRouter()
+
   const initialState = {
     email: '',
     password: '',
@@ -20,10 +24,21 @@ export default function LoginPage() {
     setForm({ ...form, [name]: value })
   }
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    
-    console.log('enviando credenciales del usuario...')
+
+    const response = await login(form)
+
+    if (!response.token) {
+      // Redireccionamos al login nuevamente
+      router.push('/')
+      return
+    }
+
+    // redireccionar a la ruta /home
+    router.push('/home')
+
+    // console.log('enviando credenciales del usuario...')
   }
 
   return (
@@ -38,7 +53,7 @@ export default function LoginPage() {
             <p className="text-sm text-slate-600">Enter your email below to login your account.</p>
           </div>
 
-          {JSON.stringify(form)}
+          {/* {JSON.stringify(form)} */}
 
           <form className="flex flex-col gap-2 p-8" onSubmit={handleLogin}>
             <label className="font-bold">Email</label>

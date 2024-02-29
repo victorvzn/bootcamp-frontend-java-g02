@@ -14,9 +14,11 @@ export default function LoginPage() {
   const [form, setForm] = useState(initialState)
 
   const handleChange = (event) => {
-    console.log(event.target.name, event.target.value)
-  }
+    // console.log(event.target.name, event.target.value)
+    const { name, value } = event.target
 
+    setForm({ ...form, [name]: value })
+  }
 
   return (
     <>
@@ -40,6 +42,7 @@ export default function LoginPage() {
               placeholder="jhondoe@mail.com"
               name="email"
               onChange={handleChange}
+              value={form.email}
             />
             
             <label className="font-bold">Password</label>
@@ -49,6 +52,7 @@ export default function LoginPage() {
               placeholder="Ej. supersecret"
               name="password"
               onChange={handleChange}
+              value={form.password}
             />
             
             <button className="mt-4 border p-3 bg-sky-700 text-white rounded-md cursor-pointer">Login</button>

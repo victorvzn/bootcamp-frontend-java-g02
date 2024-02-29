@@ -20,6 +20,12 @@ export default function LoginPage() {
     setForm({ ...form, [name]: value })
   }
 
+  const handleLogin = (event) => {
+    event.preventDefault();
+    
+    console.log('enviando credenciales del usuario...')
+  }
+
   return (
     <>
       <HeaderLogin />
@@ -34,7 +40,7 @@ export default function LoginPage() {
 
           {JSON.stringify(form)}
 
-          <form className="flex flex-col gap-2 p-8">
+          <form className="flex flex-col gap-2 p-8" onSubmit={handleLogin}>
             <label className="font-bold">Email</label>
             <input
               className="border p-3 shadow-sm rounded-md"

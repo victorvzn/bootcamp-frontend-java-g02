@@ -2,7 +2,7 @@ import HeaderLogin from "@/components/HeaderLogin";
 import Link from "next/link";
 
 export default function RegisterPage() {
-  /* TODO: Trabajar en la maquetación de esta página agregando los campos: first_name, last_name, email, password */
+  /* TODO: Trabajar en el envío del formulario al api de los campos: first_name, last_name, email, password */
 
   return (
     <>

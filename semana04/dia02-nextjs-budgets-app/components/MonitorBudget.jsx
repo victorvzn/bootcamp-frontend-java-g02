@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function MonitorBudget({ budget, expenses }) {
   return (
     <section className='bg-orange-300 flex justify-center gap-10 p-4'>

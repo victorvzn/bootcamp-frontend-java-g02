@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function BudgetExpensePage() {
   return (
     <form className='w-96 mx-auto'>

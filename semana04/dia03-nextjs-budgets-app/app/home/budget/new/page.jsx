@@ -68,7 +68,7 @@ export default function BudgetNewPage() {
 
   return (
     <form className='w-96 mx-auto' onSubmit={handleSave}>
-      <h1 className='text-center text-3xl mb-8'>New Budget</h1>
+      <h1 className='text-center text-3xl mb-8'>Update Budget</h1>
 
       <section className='flex flex-col gap-4 bg-slate-100 p-8 shadow-lg'>
         <label className='font-medium'>

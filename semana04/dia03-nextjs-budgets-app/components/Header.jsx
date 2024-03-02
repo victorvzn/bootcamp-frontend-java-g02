@@ -28,7 +28,7 @@ export default function Header() {
             href='/home/budget/new'
             className="hover:text-orange-800"
           >
-            New budget
+            Update budget
           </Link>
           <Link
             href='/home/budget/expense'

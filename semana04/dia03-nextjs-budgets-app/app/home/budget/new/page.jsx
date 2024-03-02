@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+
+import { createBudget, fetchBudgets } from "@/services/budgets"
 
 export default function BudgetNewPage() {
   const initialState = {
@@ -9,16 +11,33 @@ export default function BudgetNewPage() {
 
   const [form, setForm] = useState(initialState)
 
+  useEffect(() => {
+    // Este useEffect solo se ejecuta al crearse el componente BudgetNewPage
+    console.log('Me ejecuta la primera vez')
+
+    fetchBudgets() // Devuelve una promesa
+      .then(data => { //
+        const [budget] = data
+
+        localStorage.setItem('budget-data', JSON.stringify(budget))
+        setForm({
+          amount: budget.amount
+        })
+      })
+  }, [])
+
   const handleChange = (event) => {
     const { name, value } = event.target
 
     setForm({ ...form, [name]: value })
   }
 
-  const handleSave = (event) => {
+  const handleSave = async (event) => {
     event.preventDefault();
 
-    // ???
+    const data = await createBudget()
+
+    console.log(data)
     
     // console.log('Guardando budget...')
   }
@@ -36,6 +55,7 @@ export default function BudgetNewPage() {
             placeholder='0'
             className='border w-full p-3 mt-2'
             onChange={handleChange}
+            value={form.amount}
           />
         </label>
 

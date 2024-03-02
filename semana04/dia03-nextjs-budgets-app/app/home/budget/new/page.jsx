@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 
 import { updateBudget, fetchBudgets } from "@/services/budgets"
 import { toast } from "sonner"
+import { TbCirclePlus } from "react-icons/tb";
 
 export default function BudgetNewPage() {
   const initialState = {
@@ -78,12 +79,12 @@ export default function BudgetNewPage() {
 
         {JSON.stringify(form)}
 
-        <input
-          type='submit'
-          value='Save Budget'
-          className='w-full bg-amber-300 p-3 font-medium cursor-pointer hover:bg-amber-400 duration-300'
-
-        />
+        <button
+          className='w-full bg-amber-300 p-3 font-medium cursor-pointer hover:bg-amber-400 duration-300 flex justify-center items-center gap-2'
+        >
+          <TbCirclePlus size={20} />
+          Save Budget
+        </button>
       </section>
     </form>
   )

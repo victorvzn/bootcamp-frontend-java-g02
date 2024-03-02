@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
+import { TbLogout } from "react-icons/tb";
 
 export default function Header() {
   const router = useRouter()
@@ -40,7 +41,7 @@ export default function Header() {
             className="text-red-800 font-medium"
             onClick={handleLogout}
           >
-            Logout
+            <TbLogout size={22} />
           </button>
         </nav>
       </div>

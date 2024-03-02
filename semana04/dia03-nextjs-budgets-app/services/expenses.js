@@ -18,3 +18,19 @@ export async function createExpense(form) {
 
   return response.data
 }
+
+export async function fetchExpenses() {
+  const url = API_URL + '/expenses'
+
+  const token = localStorage.getItem('auth-token')
+
+  const options = {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await fetch(url, options)
+
+  return await response.json()
+}

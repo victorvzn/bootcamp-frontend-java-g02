@@ -1,19 +1,61 @@
+'use client'
+
 import MonitorBudget from '@/components/MonitorBudget'
+import { fetchExpenses } from '@/services/expenses'
+import { useEffect, useState } from 'react'
 
 export default function HomePage() {
+  const [expenses, setExpenses] = useState([])
+  const [budget, setBudget] = useState(0)
+  
+  useEffect(() => {
+    fetchExpenses()
+      .then(data => {
+        console.log(data)
+        setExpenses(data)
+      })
+  }, [])
+
+  useEffect(() => {
+    const budgets = JSON.parse(localStorage.getItem('budget-data'))
+
+    setBudget(budgets.amount)
+  }, [])
+
+  const handleDelete = (event) => {
+    // TODO: Eliminar un expense llamando al API
+
+    console.log('estoy eliminando un expense')
+  }
+
   return (
     <>
-      <MonitorBudget />
+      <MonitorBudget budget={budget} expenses={expenses}  />
 
       <h1 className='text-3xl my-4'>Expense list</h1>
 
-      <ul className='flex flex-col gap-4'>
-        <li>
-          expense.name - S/ expense.amount <button className='bg-red-600 px-2 text-white'>Delete</button>
-        </li>
-        <li>expense.name - S/ expense.amount <button className='bg-red-600 px-2 text-white'>Delete</button></li>
-        <li>expense.name - S/ expense.amount <button className='bg-red-600 px-2 text-white'>Delete</button></li>
-      </ul>
+      <table className='table-auto border-collapse border-spacing-2 border border-slate-400'>
+        <thead>
+          <tr>
+            <th className='border border-slate-300 p-2'>Name</th>
+            <th className='border border-slate-300 p-2'>Amount</th>
+            <th className='border border-slate-300 p-2'>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expenses.map(expense => {
+            return (
+              <tr key={expense.id}>
+                <td className='border border-slate-300 p-2'>{expense.name}</td>
+                <td className='border border-slate-300 p-2'>S/ {expense.amount}</td>
+                <td className='border border-slate-300 p-2'>
+                  <button className='bg-red-600 px-2 text-white' onClick={handleDelete}>Delete</button>
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </>
   )
 }

@@ -2,7 +2,13 @@
 
 import { useState } from "react"
 
+import { createExpense } from "@/services/expenses"
+import { useRouter } from "next/navigation" 
+import { userAgent } from "next/server"
+
 export default function BudgetExpensePage() {
+  const router = useRouter()
+
   const initialState = {
     name: '',
     amount: 0
@@ -17,17 +23,26 @@ export default function BudgetExpensePage() {
     setForm({ ...form, [name]: value })
   }
 
-  const handleSave = (event) => {
+  const handleSave = async (event) => {
     event.preventDefault();
+
+    const newExpense = {
+      name: form.name,
+      amount: Number(form.amount)
+    }
     
-    
+    const result = await createExpense(newExpense)
+
+    console.log(result)
+
+    router.push('/home')
   }
 
   return (
     <form className='w-96 mx-auto' onSubmit={handleSave}>
       <h1 className='text-center text-3xl mb-8'>New Expense</h1>
 
-      {JSON.stringify(form)}
+      {/* {JSON.stringify(form)} */}
 
       <section className='flex flex-col gap-4 bg-slate-100 p-8 shadow-lg'>
         <label className='font-medium'>

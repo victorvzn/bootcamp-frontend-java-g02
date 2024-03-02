@@ -12,7 +12,7 @@ export async function createExpense(form) {
     'Authorization': `Bearer ${token}`
   }
 
-  const response = await axios.post(url, form, headers)
+  const response = await axios.post(url, form, { headers })
 
   console.log(response)
 

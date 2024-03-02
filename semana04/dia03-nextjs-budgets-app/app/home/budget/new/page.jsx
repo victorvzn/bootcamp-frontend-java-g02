@@ -15,8 +15,16 @@ export default function BudgetNewPage() {
     setForm({ ...form, [name]: value })
   }
 
+  const handleSave = (event) => {
+    event.preventDefault();
+
+    // ???
+    
+    // console.log('Guardando budget...')
+  }
+
   return (
-    <form className='w-96 mx-auto'>
+    <form className='w-96 mx-auto' onSubmit={handleSave}>
       <h1 className='text-center text-3xl mb-8'>New Budget</h1>
 
       <section className='flex flex-col gap-4 bg-slate-100 p-8 shadow-lg'>

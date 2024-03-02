@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 
 import { updateBudget, fetchBudgets } from "@/services/budgets"
+import { toast } from "sonner"
 
 export default function BudgetNewPage() {
   const initialState = {
@@ -47,7 +48,13 @@ export default function BudgetNewPage() {
 
     const data = await updateBudget(budgetId, formData)
 
-    console.log(data)
+    if (!data.id) {
+      // mostramos un mensaje de error al usuario
+      toast.error('Tuvimos problemas al guardar el budget.')
+    }
+
+    // mostramos un mensaje de ok al usuario
+    toast.success('Se actualizó el budget correctamente.')
     
     // console.log('Guardando budget...')
   }

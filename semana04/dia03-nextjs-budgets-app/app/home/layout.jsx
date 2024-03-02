@@ -3,6 +3,8 @@
 import Header from "@/components/Header";
 import { useRouter } from 'next/navigation'
 
+import { Toaster } from "sonner";
+
 export default function HomeLayout({ children }) {
   const router = useRouter()
 
@@ -22,6 +24,8 @@ export default function HomeLayout({ children }) {
           {children}
         </div>
       </main>
+
+      <Toaster richColors position="top-right" />
     </>
   )
 }

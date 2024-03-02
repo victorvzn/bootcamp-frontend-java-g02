@@ -4,7 +4,8 @@ import { useEffect, useState } from "react"
 
 import { updateBudget, fetchBudgets } from "@/services/budgets"
 import { toast } from "sonner"
-import { TbCirclePlus } from "react-icons/tb";
+import { TbCirclePlus, TbLoader2 } from "react-icons/tb";
+
 
 export default function BudgetNewPage() {
   const initialState = {
@@ -12,6 +13,7 @@ export default function BudgetNewPage() {
   }
 
   const [form, setForm] = useState(initialState)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     // Este useEffect solo se ejecuta al crearse el componente BudgetNewPage
@@ -38,6 +40,7 @@ export default function BudgetNewPage() {
 
   const handleSave = async (event) => {
     event.preventDefault();
+    setLoading(true)
 
     const budgetData = JSON.parse(localStorage.getItem('budget-data'))
 
@@ -52,10 +55,13 @@ export default function BudgetNewPage() {
     if (!data.id) {
       // mostramos un mensaje de error al usuario
       toast.error('Tuvimos problemas al guardar el budget.')
+      setLoading(false)
+      return
     }
 
     // mostramos un mensaje de ok al usuario
     toast.success('Se actualizó el budget correctamente.')
+    setLoading(false)
     
     // console.log('Guardando budget...')
   }
@@ -77,13 +83,18 @@ export default function BudgetNewPage() {
           />
         </label>
 
-        {JSON.stringify(form)}
+        {/* {JSON.stringify(form)} */}
 
         <button
-          className='w-full bg-amber-300 p-3 font-medium cursor-pointer hover:bg-amber-400 duration-300 flex justify-center items-center gap-2'
+          className='w-full bg-amber-300 p-3 font-medium cursor-pointer hover:bg-amber-400 duration-300 flex justify-center items-center gap-2 disabled:bg-slate-400'
+          disabled={loading}
         >
-          <TbCirclePlus size={20} />
-          Save Budget
+          {
+            !loading
+              ? (<><TbCirclePlus size={20} /> Save Budget</>)
+              : (<TbLoader2 size={20} className="animate-spin" />)
+          }
+          
         </button>
       </section>
     </form>

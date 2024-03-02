@@ -16,9 +16,8 @@ export async function fetchBudgets() {
   return await response.json()
 }
 
-
-export async function createBudget(form) {
-  const url = API_URL + '/budgets'
+export async function updateBudget(budgetId, form) {
+  const url = API_URL + '/budgets/' + budgetId
 
   const token = localStorage.getItem('auth-token')
 

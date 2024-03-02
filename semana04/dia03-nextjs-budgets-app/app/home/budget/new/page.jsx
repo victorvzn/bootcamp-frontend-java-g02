@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-import { createBudget, fetchBudgets } from "@/services/budgets"
+import { updateBudget, fetchBudgets } from "@/services/budgets"
 
 export default function BudgetNewPage() {
   const initialState = {
@@ -17,12 +17,14 @@ export default function BudgetNewPage() {
 
     fetchBudgets() // Devuelve una promesa
       .then(data => { //
-        const [budget] = data
+        const budget = data[0]
 
-        localStorage.setItem('budget-data', JSON.stringify(budget))
-        setForm({
-          amount: budget.amount
-        })
+        if (budget) {
+          localStorage.setItem('budget-data', JSON.stringify(budget))
+          setForm({
+            amount: budget.amount
+          })
+        }
       })
   }, [])
 
@@ -35,7 +37,15 @@ export default function BudgetNewPage() {
   const handleSave = async (event) => {
     event.preventDefault();
 
-    const data = await createBudget()
+    const budgetData = JSON.parse(localStorage.getItem('budget-data'))
+
+    const budgetId = budgetData.id
+
+    const formData = {
+      amount: Number(form.amount)
+    }
+
+    const data = await updateBudget(budgetId, formData)
 
     console.log(data)
     

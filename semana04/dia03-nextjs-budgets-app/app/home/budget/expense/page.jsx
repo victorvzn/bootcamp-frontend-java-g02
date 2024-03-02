@@ -1,7 +1,33 @@
+'use client'
+
+import { useState } from "react"
+
 export default function BudgetExpensePage() {
+  const initialState = {
+    name: '',
+    amount: 0
+  }
+
+  const [form, setForm] = useState(initialState)
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+
+    setForm({ ...form, [name]: value })
+  }
+
+  const handleSave = (event) => {
+    event.preventDefault();
+    
+    
+  }
+
   return (
-    <form className='w-96 mx-auto'>
+    <form className='w-96 mx-auto' onSubmit={handleSave}>
       <h1 className='text-center text-3xl mb-8'>New Expense</h1>
+
+      {JSON.stringify(form)}
 
       <section className='flex flex-col gap-4 bg-slate-100 p-8 shadow-lg'>
         <label className='font-medium'>
@@ -11,6 +37,7 @@ export default function BudgetExpensePage() {
             name='name'
             placeholder='Restaurant, Travel, etc.'
             className='border w-full p-3 mt-2'
+            onChange={handleChange}
           />
         </label>
 
@@ -21,14 +48,15 @@ export default function BudgetExpensePage() {
             name='amount'
             placeholder='0.00'
             className='border w-full p-3 mt-2'
+            onChange={handleChange}
           />
         </label>
 
-        <input
-          type='submit'
-          value='Save Expense'
+        <button
           className='w-full bg-amber-300 p-3 font-medium cursor-pointer hover:bg-amber-400 duration-300'
-        />
+        >
+          Save Expense
+        </button>
       </section>
     </form>
   )

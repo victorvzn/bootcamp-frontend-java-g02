@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from 'next/navigation'
 import { TbLogout } from "react-icons/tb";
 
-export default function Header() {
+export default function HeaderInvoices() {
   const router = useRouter()
 
   const handleLogout = (event) => {
@@ -18,31 +18,19 @@ export default function Header() {
       <div className="container mx-auto flex justify-between">
         <h1 className="font-bold">
           <Link
-            href='/home'
+            href='/invoices'
             className="hover:text-orange-800"
           >
-            Budget App
+            Invoice App
           </Link>
         </h1>
         <nav className="flex gap-3">
           
           <Link
-            href='/home/budget/new'
+            href='/home'
             className="hover:text-orange-800"
           >
-            Update budget
-          </Link>
-          <Link
-            href='/home/budget/expense'
-            className="hover:text-orange-800"
-          >
-            New Expense
-          </Link>
-          <Link
-            href='/invoices'
-            className="hover:text-orange-800"
-          >
-            Invoices
+            Budget
           </Link>
 
           <button

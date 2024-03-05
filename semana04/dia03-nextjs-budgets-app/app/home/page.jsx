@@ -1,8 +1,9 @@
 'use client'
 
 import MonitorBudget from '@/components/MonitorBudget'
-import { fetchExpenses } from '@/services/expenses'
+import { deleteExpense, fetchExpenses } from '@/services/expenses'
 import { useEffect, useState } from 'react'
+import { toast } from "sonner"
 
 export default function HomePage() {
   const [expenses, setExpenses] = useState([])
@@ -28,6 +29,21 @@ export default function HomePage() {
     // console.log('estoy eliminando un expense')
 
     console.log(id)
+
+    deleteExpense(id)
+      .then(data => {
+        toast.success('Se eliminó el expense correctamente.')
+
+        fetchExpenses()
+          .then(data => {
+            console.log(data)
+            setExpenses(data)
+          })
+      })
+      .catch(error => {
+        console.log(error)
+        toast.success('Hubo un error al eliminar.')
+      })
   }
 
   return (

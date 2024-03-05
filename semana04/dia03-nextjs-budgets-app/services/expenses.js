@@ -44,9 +44,11 @@ export async function deleteExpense(id) {
     'Authorization': `Bearer ${token}`
   }
 
-  const response = await axios.delete(url)
+  const response = await axios.delete(url, { headers })
 
   console.log(response)
 
   return response.data
 }
+
+// async/await siempre retorna una promesa

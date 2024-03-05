@@ -21,7 +21,7 @@ export default function InvoicesPage() {
       </header>
 
       <section>
-        <article className="text-white2">
+        <article className="text-white">
           <div>
             <span>#</span>
             <span>RT3080</span>

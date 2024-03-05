@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import { useRouter } from 'next/navigation'
+import { useEffect } from "react";
 
 import { Toaster } from "sonner";
 
@@ -10,10 +11,12 @@ export default function HomeLayout({ children }) {
 
   const hasToken = Boolean(typeof window !== "undefined" ? localStorage.getItem('auth-token') : false) // undefined -> false, string -> true
 
-  if (!hasToken) {
-    router.push('/')
-    return
-  }
+  useEffect(() => {
+    if (!hasToken) {
+      router && router.push('/')
+      return
+    }
+  }, [])
 
   return (
     <>

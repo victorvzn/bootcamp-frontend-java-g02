@@ -1,8 +1,8 @@
 export default function MonitorBudget({ budget, expenses }) {
 
-  const totalExpenses = expenses.reduce((accumulator, current) => {
+  const totalExpenses = expenses.length > 0 ? expenses.reduce((accumulator, current) => {
       return accumulator + current.amount
-    }, 0)
+    }, 0) : 0
 
   const totalBalance = budget - totalExpenses
 

@@ -34,3 +34,19 @@ export async function fetchExpenses() {
 
   return await response.json()
 }
+
+export async function deleteExpense(id) {
+  const url = API_URL + '/expenses/' + id
+
+  const token = localStorage.getItem('auth-token')
+
+  const headers = {
+    'Authorization': `Bearer ${token}`
+  }
+
+  const response = await axios.delete(url)
+
+  console.log(response)
+
+  return response.data
+}

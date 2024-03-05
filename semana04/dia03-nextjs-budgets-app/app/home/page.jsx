@@ -22,10 +22,12 @@ export default function HomePage() {
     setBudget(budgets.amount)
   }, [])
 
-  const handleDelete = (event) => {
+  const handleDelete = (id) => {
     // TODO: Eliminar un expense llamando al API
 
-    console.log('estoy eliminando un expense')
+    // console.log('estoy eliminando un expense')
+
+    console.log(id)
   }
 
   return (
@@ -49,7 +51,12 @@ export default function HomePage() {
                 <td className='border border-slate-300 p-2'>{expense.name}</td>
                 <td className='border border-slate-300 p-2'>S/ {expense.amount}</td>
                 <td className='border border-slate-300 p-2'>
-                  <button className='bg-red-600 px-2 text-white' onClick={handleDelete}>Delete</button>
+                  <button
+                    className='bg-red-600 px-2 text-white'
+                    onClick={() => handleDelete(expense.id)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             )

@@ -21,10 +21,29 @@ Content-Type: application/json
 ### Recuperar los invoices de un usuario que hizo login
 GET https://mockmentor.4.us-1.fl0.io/api/v1/invoices
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTYwNzQwMiwiZXhwIjoxNzA5NjExMDAyfQ.Wn0IOn0xIQchlsjPimsdglMTqZdkQUwH09ZkkG5wq2s
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTYxMTIxMywiZXhwIjoxNzA5NjE0ODEzfQ.puKArpOy1WnmbbjqB3NWDIM6ADGd0KAE_gmNeWtAndg
 
+### Creamos una nueva invoice
+POST https://mockmentor.4.us-1.fl0.io/api/v1/invoices
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTYxMTIxMywiZXhwIjoxNzA5NjE0ODEzfQ.puKArpOy1WnmbbjqB3NWDIM6ADGd0KAE_gmNeWtAndg
 
-
+{
+  "bill_from_street_address": "Ap #248-9587 Tortor, Av.",
+  "bill_from_city": "Chiclayo",
+  "bill_from_postCode": "687775",
+  "bill_from_country": "Peru",
+  "bill_to_client_name": "Kimberly Tucker",
+  "bill_to_client_email": "dictum.proin@yahoo.com",
+  "bill_to_street_address": "P.O. Box 666, 3606 Sem Road",
+  "bill_to_city": "Kidapawan",
+  "bill_to_post_code": "T54 8AX",
+  "bill_to_country": "South Korea",
+  "date": "2024-04-16T06:43:19Z",
+  "payment_terms": "Next 30 Days",
+  "project_description": "Graphic Design",
+  "items": []
+}
 
 
 ### Recuperar los budgets de un usuario que hizo login

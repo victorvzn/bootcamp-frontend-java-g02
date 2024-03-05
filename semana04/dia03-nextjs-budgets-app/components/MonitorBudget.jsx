@@ -1,8 +1,8 @@
 export default function MonitorBudget({ budget, expenses }) {
 
   const totalExpenses = expenses.reduce((accumulator, current) => {
-    return accumulator + current.amount
-  }, 0)
+      return accumulator + current.amount
+    }, 0)
 
   const totalBalance = budget - totalExpenses
 
@@ -13,7 +13,7 @@ export default function MonitorBudget({ budget, expenses }) {
         <h6 className='text-lg font-semibold'>Budget</h6>
       </div>
       <div>
-        <h4 className='text-3xl font-extrabold'>{totalExpenses}</h4>
+        <h4 className='text-3xl font-extrabold'>{(totalExpenses)}</h4>
         <h6 className='text-lg font-semibold'>Expenses</h6>
       </div>
       <div>

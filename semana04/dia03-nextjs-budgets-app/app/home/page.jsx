@@ -18,7 +18,7 @@ export default function HomePage() {
   }, [])
 
   useEffect(() => {
-    const budgets = JSON.parse(localStorage.getItem('budget-data'))
+    const budgets = JSON.parse(typeof window !== "undefined" ? localStorage.getItem('budget-data') : false)
 
     setBudget(budgets.amount)
   }, [])
@@ -61,7 +61,7 @@ export default function HomePage() {
           </tr>
         </thead>
         <tbody>
-          {expenses.map(expense => {
+          {expenses.length > 0 && expenses.map(expense => {
             return (
               <tr key={expense.id}>
                 <td className='border border-slate-300 p-2'>{expense.name}</td>

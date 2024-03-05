@@ -8,7 +8,7 @@ import { Toaster } from "sonner";
 export default function HomeLayout({ children }) {
   const router = useRouter()
 
-  const hasToken = Boolean(localStorage.getItem('auth-token')) // undefined -> false, string -> true
+  const hasToken = Boolean(typeof window !== "undefined" ? localStorage.getItem('auth-token') : false) // undefined -> false, string -> true
 
   if (!hasToken) {
     router.push('/')

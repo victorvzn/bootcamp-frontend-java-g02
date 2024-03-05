@@ -18,6 +18,14 @@ Content-Type: application/json
   "password": "Welcome@987"
 }
 
+### Recuperar los invoices de un usuario que hizo login
+GET https://mockmentor.4.us-1.fl0.io/api/v1/invoices
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTYwNzQwMiwiZXhwIjoxNzA5NjExMDAyfQ.Wn0IOn0xIQchlsjPimsdglMTqZdkQUwH09ZkkG5wq2s
+
+
+
+
 
 ### Recuperar los budgets de un usuario que hizo login
 GET https://mockmentor.4.us-1.fl0.io/api/v1/budgets

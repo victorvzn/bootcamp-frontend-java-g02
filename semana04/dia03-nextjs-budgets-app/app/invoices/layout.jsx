@@ -16,7 +16,7 @@ export default function InvoicesLayout({ children }) {
   }
 
   return (
-    <>
+    <div className="bg-slate-900 h-screen">
       <HeaderInvoices />
 
       <main className="m-6">
@@ -26,6 +26,6 @@ export default function InvoicesLayout({ children }) {
       </main>
 
       <Toaster richColors position="top-right" />
-    </>
+    </div>
   )
 }

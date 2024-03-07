@@ -53,7 +53,7 @@ export default function InvoiceDetail({ params }) {
       </header>
 
       <section
-        className="bg-slate-700 rounded-lg text-white p-10 mt-5"
+        className="bg-slate-700 rounded-lg text-white p-10 mt-5 flex flex-col gap-10"
       >
         <div className="flex justify-between w-full">
           <div className="text-3xl">
@@ -83,11 +83,11 @@ export default function InvoiceDetail({ params }) {
 
           <div>
             <div className="text-base text-slate-400">Bill to</div>
-            <div className="text-sm">clientName</div>
-            <div className="text-sm">streetaddress</div>
-            <div className="text-sm">city</div>
-            <div className="text-sm">postCode</div>
-            <div className="text-sm">country</div>
+            <div className="text-xl font-extrabold">clientName</div>
+            <div className="text-base ">streetaddress</div>
+            <div className="text-base ">city</div>
+            <div className="text-base ">postCode</div>
+            <div className="text-base ">country</div>
           </div>
 
           <div>
@@ -100,27 +100,27 @@ export default function InvoiceDetail({ params }) {
 
         {/* TODO: Terminar de maquetar esta tabla */}
 
-        <table>
+        <table className="bg-slate-600 w-full rounded-lg overflow-hidden">
           <thead>
             <tr>
-              <td>Item Name</td>
-              <td>QTY</td>
-              <td>Price</td>
-              <td>Total</td>
+              <td className="p-4 text-base font-normal">Item Name</td>
+              <td className="p-4 text-base font-normal text-center w-44">QTY</td>
+              <td className="p-4 text-base font-normal text-center w-44">Price</td>
+              <td className="p-4 text-base font-normal text-right w-44">Total</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>item.name</td>
-              <td>qty</td>
-              <td>price</td>
-              <td>$ total</td>
+              <td className="p-4 text-sm font-bold">item.name</td>
+              <td className="p-4 text-sm font-bold text-center w-44">qty</td>
+              <td className="p-4 text-sm font-bold text-center w-44">price</td>
+              <td className="p-4 text-sm font-bold text-right w-44">$ 0.00</td>
             </tr>
           </tbody>
           <tfoot>
-            <tr>
-              <td colSpan={2}>Amount Due</td>
-              <td colSpan={2}>
+            <tr className="bg-black">
+              <td className="p-4 text-lg font-normal" colSpan={2}>Amount Due</td>
+              <td className="p-4 text-4xl font-bold text-right" colSpan={2}>
                 $ 0.00
               </td>
             </tr>

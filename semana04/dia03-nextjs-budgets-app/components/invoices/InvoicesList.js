@@ -3,6 +3,7 @@ import { formatDate, formatNumber } from "@/utils";
 import { TbChevronRight } from "react-icons/tb";
 
 import BaseTag from "../shared/BaseTag";
+import Link from "next/link";
 
 export default function InvoicesList({ invoices }) {
   return (
@@ -30,9 +31,11 @@ export default function InvoicesList({ invoices }) {
                 && <BaseTag label={invoice.status} bgColor="bg-slate-400/20" dotColor="text-text-100" />
               }
             </div>
-            <div className="w-12 h-12 flex justify-center items-center cursor-pointer rounded-full hover:bg-slate-600 hover:duration-300">
-              <TbChevronRight />
-            </div>
+            <Link href={`/invoices/${invoice.id}`}>
+              <div className="w-12 h-12 flex justify-center items-center cursor-pointer rounded-full hover:bg-slate-600 hover:duration-300">
+                <TbChevronRight />
+              </div>
+            </Link>
           </article>
         )
       })}

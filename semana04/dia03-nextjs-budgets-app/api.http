@@ -58,6 +58,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhN
   "status": "paid"
 }
 
+### Actualizamos el grand_total de un invoice
+PUT https://mockmentor.4.us-1.fl0.io/api/v1/invoices/b4001959-ca47-4231-958d-9206af7cb4e8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc4MDE0OSwiZXhwIjoxNzA5NzgzNzQ5fQ.jMUtXqnhk7z0YByNLs2G5TiV_W5sW6v7exgbjBfscsU
+
+{
+  "grand_total": 1800.90
+}
 
 ### Recuperar los budgets de un usuario que hizo login
 GET https://mockmentor.4.us-1.fl0.io/api/v1/budgets

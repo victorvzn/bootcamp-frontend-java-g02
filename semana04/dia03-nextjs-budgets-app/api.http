@@ -30,7 +30,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhN
 
 {
   "bill_from_street_address": "Ap #248-9587 Tortor, Av.",
-  "bill_from_city": "Chiclayo",
+  "bill_from_city": "Trujillo",
   "bill_from_postCode": "687775",
   "bill_from_country": "Peru",
   "bill_to_client_name": "Kimberly Tucker",
@@ -41,7 +41,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhN
   "bill_to_country": "South Korea",
   "date": "2024-04-16T06:43:19Z",
   "payment_terms": "Next 30 Days",
-  "project_description": "Graphic Design",
+  "project_description": "Invoice app develop",
   "items": []
 }
 

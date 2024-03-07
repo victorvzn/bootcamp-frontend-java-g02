@@ -1,6 +1,6 @@
 import { TbSquareRoundedPlus } from "react-icons/tb";
 
-export default function Header() {
+export default function InvoicesHeader() {
   return (
     <header className="flex justify-between items-center container mx-auto bg-slate-900 mt-5 mb-16">
       <div className="text-white">

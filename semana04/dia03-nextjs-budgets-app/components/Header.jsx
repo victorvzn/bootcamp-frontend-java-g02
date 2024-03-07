@@ -13,6 +13,8 @@ export default function Header() {
     router.push('/') // login
   }
 
+  const role = 'admin'
+
   return (
     <header className="bg-amber-200 py-4 px-6">
       <div className="container mx-auto flex justify-between">
@@ -38,12 +40,17 @@ export default function Header() {
           >
             New Expense
           </Link>
-          <Link
-            href='/invoices'
-            className="hover:text-orange-800"
-          >
-            Invoices
-          </Link>
+          {role === 'admin'
+          ? (
+              <Link
+                href='/invoices'
+                className="hover:text-orange-800"
+              >
+                Invoices
+              </Link>
+            )
+          : ''
+          } 
 
           <button
             className="text-red-800 font-medium"

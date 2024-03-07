@@ -22,9 +22,9 @@ export default function InvoicesPage() {
 
       <InvoicesList invoices={invoices} />
 
-      <pre className="text-white">
+      {/* <pre className="text-white">
         {JSON.stringify(invoices, null, 2)}
-      </pre>
+      </pre> */}
     </>
   )
 }

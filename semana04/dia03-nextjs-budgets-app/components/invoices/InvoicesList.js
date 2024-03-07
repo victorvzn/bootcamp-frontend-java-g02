@@ -1,10 +1,13 @@
 import { formatDate, formatNumber } from "@/utils";
+
 import { TbChevronRight } from "react-icons/tb";
+
+import BaseTag from "../shared/BaseTag";
 
 export default function InvoicesList({ invoices }) {
   return (
     <section className="container m-auto flex flex-col gap-5">
-      {invoices.map(invoice => {
+      {invoices?.map(invoice => {
         return (
           <article className="text-white bg-slate-700 p-4 rounded-lg flex justify-between items-center  text-base gap-3">
             <div className="w-20">
@@ -17,10 +20,15 @@ export default function InvoicesList({ invoices }) {
               {invoice.currency_symbol} {formatNumber(invoice.grand_total)}
             </div>
             <div>
-              <div className="py-2 rounded-md text-center capitalize font-extrabold min-w-[120px] bg-emerald-400/20 text-emerald-400 flex justify-center items-center">
-                <span className="text-3xl leading-3 mr-2">•</span>
-                <span>{invoice.status}</span>
-              </div>
+              {invoice.status === 'paid'
+                && <BaseTag label={invoice.status} bgColor="bg-emerald-400/20" dotColor="text-emerald-400" />
+              }
+              {invoice.status === 'pending'
+                && <BaseTag label={invoice.status} bgColor="bg-orange-400/20" dotColor="text-orange-400" />
+              }
+              {invoice.status === 'draft'
+                && <BaseTag label={invoice.status} bgColor="bg-slate-400/20" dotColor="text-text-100" />
+              }
             </div>
             <div className="w-12 h-12 flex justify-center items-center cursor-pointer rounded-full hover:bg-slate-600 hover:duration-300">
               <TbChevronRight />

@@ -20,7 +20,7 @@ export default function InvoicesPage() {
     <>
       <InvoicesHeader />
 
-      <InvoicesList />
+      <InvoicesList invoices={invoices} />
 
       <pre className="text-white">
         {JSON.stringify(invoices, null, 2)}

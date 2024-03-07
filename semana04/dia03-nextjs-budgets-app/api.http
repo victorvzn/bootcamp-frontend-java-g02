@@ -21,34 +21,42 @@ Content-Type: application/json
 ### Recuperar los invoices de un usuario que hizo login
 GET https://mockmentor.4.us-1.fl0.io/api/v1/invoices
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc3MjAwNCwiZXhwIjoxNzA5Nzc1NjA0fQ.KfP7WSJ6bbEyFV_zr06erjNNVcJSHFZ5Rjy9GMEPXqg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc4MDE0OSwiZXhwIjoxNzA5NzgzNzQ5fQ.jMUtXqnhk7z0YByNLs2G5TiV_W5sW6v7exgbjBfscsU
 
 ### Creamos una nueva invoice
 POST https://mockmentor.4.us-1.fl0.io/api/v1/invoices
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc3MjAwNCwiZXhwIjoxNzA5Nzc1NjA0fQ.KfP7WSJ6bbEyFV_zr06erjNNVcJSHFZ5Rjy9GMEPXqg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc4MDE0OSwiZXhwIjoxNzA5NzgzNzQ5fQ.jMUtXqnhk7z0YByNLs2G5TiV_W5sW6v7exgbjBfscsU
 
 {
-  "bill_from_street_address": "Ap #248-9587 Tortor, Av.",
-  "bill_from_city": "Trujillo",
-  "bill_from_postCode": "687775",
-  "bill_from_country": "Peru",
-  "bill_to_client_name": "Kimberly Tucker",
-  "bill_to_client_email": "dictum.proin@yahoo.com",
-  "bill_to_street_address": "P.O. Box 666, 3606 Sem Road",
-  "bill_to_city": "Kidapawan",
-  "bill_to_post_code": "T54 8AX",
-  "bill_to_country": "South Korea",
-  "date": "2024-04-16T06:43:19Z",
-  "payment_terms": "Next 30 Days",
-  "project_description": "Invoice app develop",
-  "items": []
+  "bill_from_street_address": "465-2786 Erat Ave",
+  "bill_from_city": "Tapachula",
+  "bill_from_postCode": "2877",
+  "bill_from_country": "Italy",
+  "bill_to_client_name": "Abel Oneal",
+  "bill_to_client_email": "pharetra.nibh@aol.com",
+  "bill_to_street_address": "111-8385 At, Rd.",
+  "bill_to_city": "San Francisco",
+  "bill_to_post_code": "2165",
+  "bill_to_country": "Turkey",
+  "date": "2023-06-13T20:03:32Z",
+  "payment_terms": "Next 15 Days",
+  "project_description": "Sodales Corp."
 }
 
 ### Recuperar una invoice por id
 GET https://mockmentor.4.us-1.fl0.io/api/v1/invoices/8a64fcda-f322-472f-8d51-9cd4ff2a66c1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc3MjAwNCwiZXhwIjoxNzA5Nzc1NjA0fQ.KfP7WSJ6bbEyFV_zr06erjNNVcJSHFZ5Rjy9GMEPXqg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc4MDE0OSwiZXhwIjoxNzA5NzgzNzQ5fQ.jMUtXqnhk7z0YByNLs2G5TiV_W5sW6v7exgbjBfscsU
+
+### Actualizamos el estado de un invoice
+PUT https://mockmentor.4.us-1.fl0.io/api/v1/invoices/b4001959-ca47-4231-958d-9206af7cb4e8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc4MDE0OSwiZXhwIjoxNzA5NzgzNzQ5fQ.jMUtXqnhk7z0YByNLs2G5TiV_W5sW6v7exgbjBfscsU
+
+{
+  "status": "paid"
+}
 
 
 ### Recuperar los budgets de un usuario que hizo login

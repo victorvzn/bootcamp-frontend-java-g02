@@ -9,7 +9,7 @@ export default function InvoicesList({ invoices }) {
     <section className="container m-auto flex flex-col gap-5">
       {invoices?.map(invoice => {
         return (
-          <article className="text-white bg-slate-700 p-4 rounded-lg flex justify-between items-center  text-base gap-3">
+          <article className="text-white bg-slate-700 p-4 rounded-lg flex justify-between items-center  text-base gap-3" key={invoice.id}>
             <div className="w-20">
               <span className="text-slate-400">#</span>
               <span className="font-extrabold uppercase">{invoice.code}</span>

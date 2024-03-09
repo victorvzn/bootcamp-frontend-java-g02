@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TbSquareRoundedPlus } from "react-icons/tb";
 
 export default function InvoicesHeader() {
@@ -8,12 +9,12 @@ export default function InvoicesHeader() {
         <span>There are 7 total invoices</span>
       </div>
 
-      <div>
+      <Link href='/invoices/new'>
         <button className="bg-indigo-400 rounded-full px-5 py-3 font-extrabold text-white flex justify-center items-center gap-4">
           <TbSquareRoundedPlus size="2rem" />
           New Invoice
         </button>
-      </div>
+      </Link>
     </header>
   )
 }

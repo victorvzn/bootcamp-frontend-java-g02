@@ -19,7 +19,7 @@ export default function InvoicesLayout({ children }) {
   }, [])
 
   return (
-    <div className="bg-slate-900 h-screen">
+    <div className="bg-slate-900 h-full">
       <HeaderInvoices />
 
       <main className="m-6">

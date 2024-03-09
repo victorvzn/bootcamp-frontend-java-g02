@@ -31,7 +31,7 @@ export default function InvoiceDetail({ params }) {
       >
         <div className="flex items-center text-white gap-2">
           <h3>Status</h3>
-          <BaseTag label='pending' bgColor="bg-emerald-400/20" dotColor="text-emerald-400" />
+          <BaseTag label={invoice?.status} bgColor="bg-emerald-400/20" dotColor="text-emerald-400" />
         </div>
 
         <div className="flex items-center gap-2">

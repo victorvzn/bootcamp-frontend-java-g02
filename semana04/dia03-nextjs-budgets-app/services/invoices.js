@@ -49,3 +49,22 @@ export const deleteInvoice = async (id) => {
 
   return await response.json()
 }
+
+export const updateInvoice = async (id, invoiceFields) => {
+  const url = `${API_URL}/invoices/${id}`
+
+  const token = localStorage.getItem('auth-token')
+
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(invoiceFields)
+  }
+
+  const response = await fetch(url, options)
+
+  return await response.json()
+}

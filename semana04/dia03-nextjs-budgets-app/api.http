@@ -50,12 +50,12 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc4MDE0OSwiZXhwIjoxNzA5NzgzNzQ5fQ.jMUtXqnhk7z0YByNLs2G5TiV_W5sW6v7exgbjBfscsU
 
 ### Actualizamos el estado de un invoice
-PUT https://mockmentor.4.us-1.fl0.io/api/v1/invoices/b4001959-ca47-4231-958d-9206af7cb4e8
+PUT https://mockmentor.4.us-1.fl0.io/api/v1/invoices/b6180c33-f51a-46fa-a95c-aef2fec1ec98
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTc4MDE0OSwiZXhwIjoxNzA5NzgzNzQ5fQ.jMUtXqnhk7z0YByNLs2G5TiV_W5sW6v7exgbjBfscsU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJmaXJzdG5hbWUiOiJBbG9uc28iLCJsYXN0bmFtZSI6IlZpbGxhesOzbiIsImlhdCI6MTcwOTk1NDc0MywiZXhwIjoxNzA5OTU4MzQzfQ.ZQdu_5lFkEfISeYF93VwpM3utWPzOYhhMMmkMnBXQMQ
 
 {
-  "status": "paid"
+  "status": "pending"
 }
 
 ### Actualizamos el grand_total de un invoice

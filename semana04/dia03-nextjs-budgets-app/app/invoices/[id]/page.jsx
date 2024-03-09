@@ -3,9 +3,9 @@
 import Link from "next/link"
 
 import BaseTag from "@/components/shared/BaseTag";
-import { TbChevronLeft } from "react-icons/tb";
+import { TbChevronLeft, TbLoader2 } from "react-icons/tb";
 import { useEffect, useState } from "react"
-import { deleteInvoice, getInvoice } from "@/services/invoices";
+import { deleteInvoice, getInvoice, updateInvoice } from "@/services/invoices";
 import { formatDate } from "@/utils";
 import Swal from 'sweetalert2'
 import { toast } from "sonner"
@@ -53,6 +53,38 @@ export default function InvoiceDetail({ params }) {
     });
   }
 
+  const handleMarkAdPaid = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to change the status to 'paid'?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, change it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setLoading(true)
+
+        const newInvoiceStatus = {
+          status: 'paid'
+        }
+
+        updateInvoice(id, newInvoiceStatus)
+          .then(res => {
+            toast.success('Se actualizó el estado del invoice a "paid" correctamente')
+            router.push('/invoices')
+          })
+          .catch(err => {
+            toast.error('Hubo un error al actualizar.')
+          })
+          .finally(() => {
+            setLoading(false)
+          })
+      }
+    })
+  }
+
   return (
     <section className="container m-auto flex flex-col gap-5">
       <Link
@@ -93,9 +125,15 @@ export default function InvoiceDetail({ params }) {
 
           <button
             type='button'
-            className='rounded-full px-5 py-4 font-semibold min-w-[100px] text-white bg-violet-500'
+            className='rounded-full px-5 py-4 font-semibold min-w-[100px] text-white bg-violet-500 disabled:opacity-55'
+            onClick={() => handleMarkAdPaid(id)}
+            disabled={invoice?.status === 'paid'}
           >
-            Mark as Paid
+            {
+              !loading
+                ? 'Mark as Paid'
+                : <TbLoader2 size={22} className="animate-spin" />
+            }
           </button>
         </div>
       </header>

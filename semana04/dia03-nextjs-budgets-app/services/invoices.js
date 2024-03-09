@@ -32,3 +32,20 @@ export const getInvoice = async (id) => {
 
   return await response.json()
 }
+
+export const deleteInvoice = async (id) => {
+  const url = `${API_URL}/invoices/${id}`
+
+  const token = localStorage.getItem('auth-token')
+
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await fetch(url, options)
+
+  return await response.json()
+}

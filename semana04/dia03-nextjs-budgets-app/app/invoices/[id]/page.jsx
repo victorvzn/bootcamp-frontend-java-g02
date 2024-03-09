@@ -5,13 +5,18 @@ import Link from "next/link"
 import BaseTag from "@/components/shared/BaseTag";
 import { TbChevronLeft } from "react-icons/tb";
 import { useEffect, useState } from "react"
-import { getInvoice } from "@/services/invoices";
+import { deleteInvoice, getInvoice } from "@/services/invoices";
 import { formatDate } from "@/utils";
 import Swal from 'sweetalert2'
+import { toast } from "sonner"
+import { useRouter } from "next/navigation";
 
 export default function InvoiceDetail({ params }) {
   const { id } = params
   const [invoice, setInvoice] = useState()
+  const [loading, setLoading] = useState(false)
+
+  const router = useRouter()
 
   useEffect(() => {
     getInvoice(id)
@@ -30,7 +35,20 @@ export default function InvoiceDetail({ params }) {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
+        setLoading(true)
+
         console.log('Eliminando invoice...', id)
+        deleteInvoice(id)
+          .then(res => {
+            toast.success('Se eliminó el invoice correctamente.')
+            router.push('/invoices')
+          })
+          .catch(err => {
+            toast.error('Hubo un error al eliminar.')
+          })
+          .finally(() => {
+            setLoading(false)
+          })
       }
     });
   }
@@ -68,8 +86,10 @@ export default function InvoiceDetail({ params }) {
             className='rounded-full px-5 py-4 font-semibold min-w-[100px] text-white bg-red-500'
             onClick={() => handleDelete(invoice.id)}
           >
-            Delete
+            Delete {Number(loading)}
           </button>
+
+          {/* TODO: Necesitamos cambiar el estado a Paid después de presionar el botón */}
 
           <button
             type='button'

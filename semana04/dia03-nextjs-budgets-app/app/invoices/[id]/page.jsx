@@ -7,6 +7,7 @@ import { TbChevronLeft } from "react-icons/tb";
 import { useEffect, useState } from "react"
 import { getInvoice } from "@/services/invoices";
 import { formatDate } from "@/utils";
+import Swal from 'sweetalert2'
 
 export default function InvoiceDetail({ params }) {
   const { id } = params
@@ -19,6 +20,19 @@ export default function InvoiceDetail({ params }) {
 
   const handleDelete = (id) => {
     console.log(id)
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log('Eliminando invoice...', id)
+      }
+    });
   }
 
   return (

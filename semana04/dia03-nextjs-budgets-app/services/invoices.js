@@ -1,5 +1,4 @@
 const API_URL = 'https://mockmentor.4.us-1.fl0.io/api/v1'
-
 export const fetchInvoices = async () => {
   const url = `${API_URL}/invoices`
 

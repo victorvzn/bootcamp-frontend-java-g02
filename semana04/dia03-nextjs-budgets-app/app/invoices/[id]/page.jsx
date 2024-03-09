@@ -17,6 +17,10 @@ export default function InvoiceDetail({ params }) {
       .then(data => setInvoice(data))
   }, [])
 
+  const handleDelete = (id) => {
+    console.log(id)
+  }
+
   return (
     <section className="container m-auto flex flex-col gap-5">
       <Link
@@ -48,6 +52,7 @@ export default function InvoiceDetail({ params }) {
           <button
             type='button'
             className='rounded-full px-5 py-4 font-semibold min-w-[100px] text-white bg-red-500'
+            onClick={() => handleDelete(invoice.id)}
           >
             Delete
           </button>

@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function InvoicesList({ invoices }) {
   return (
     <section className="container m-auto flex flex-col gap-5">
-      {invoices?.map(invoice => {
+      {invoices && invoices?.map(invoice => {
         return (
           <article className="text-white bg-slate-700 p-4 rounded-lg flex justify-between items-center  text-base gap-3" key={invoice.id}>
             <div className="w-20">

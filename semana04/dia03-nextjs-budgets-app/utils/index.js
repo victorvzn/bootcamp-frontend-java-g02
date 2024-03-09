@@ -1,8 +1,10 @@
-export const formatDate = (value) => {
+export const formatDate = (value, dateStyle = 'full') => {
+  if (!value) return ''
+
   const valueToDate = new Date(value)
 
   const options = {
-    dateStyle: 'full'
+    dateStyle
   }
 
   return new Intl.DateTimeFormat('en-US', options)

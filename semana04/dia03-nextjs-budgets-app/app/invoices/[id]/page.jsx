@@ -6,6 +6,7 @@ import BaseTag from "@/components/shared/BaseTag";
 import { TbChevronLeft } from "react-icons/tb";
 import { useEffect, useState } from "react"
 import { getInvoice } from "@/services/invoices";
+import { formatDate } from "@/utils";
 
 export default function InvoiceDetail({ params }) {
   const { id } = params
@@ -66,14 +67,16 @@ export default function InvoiceDetail({ params }) {
         <div className="flex justify-between w-full">
           <div className="text-3xl">
             <span className="text-slate-400">#</span>
-            <span className="font-extrabold">XM1156</span>
-            <div className="text-xl mt-1 text-slate-400">Graphic Design</div>
+            <span className="font-extrabold uppercase">{invoice?.code}</span>
+            <div className="text-xl mt-1 text-slate-400">
+              {invoice?.project_description}
+            </div>
           </div>
           <div className="text-sm text-right">
-            <div>streetAddress</div>
-            <div>city</div>
-            <div>postCode</div>
-            <div>country</div>
+            <div>{invoice?.bill_from_street_address}</div>
+            <div>{invoice?.bill_from_city}</div>
+            <div>{invoice?.bill_from_postCode}</div>
+            <div>{invoice?.bill_from_country}</div>
           </div>
         </div>
 
@@ -81,27 +84,31 @@ export default function InvoiceDetail({ params }) {
           <div className="flex flex-col gap-10">
             <div>
               <div className="text-base text-slate-400">Invoice Date</div>
-              <div className="text-xl font-semibold">date</div>
+              <div className="text-xl font-semibold">
+                {formatDate(invoice?.date, 'medium')}
+              </div>
             </div>
             <div>
               <div className="text-base text-slate-400">Invoice Due</div>
-              <div className="text-xl font-semibold">date</div>
+              <div className="text-xl font-semibold">
+                {formatDate(invoice?.date, 'medium')}
+              </div>
             </div>
           </div>
 
           <div>
             <div className="text-base text-slate-400">Bill to</div>
-            <div className="text-xl font-extrabold">clientName</div>
-            <div className="text-base ">streetaddress</div>
-            <div className="text-base ">city</div>
-            <div className="text-base ">postCode</div>
-            <div className="text-base ">country</div>
+            <div className="text-xl font-extrabold">{invoice?.bill_to_client_name}</div>
+            <div className="text-base ">{invoice?.bill_to_street_address}</div>
+            <div className="text-base ">{invoice?.bill_to_city}</div>
+            <div className="text-base ">{invoice?.bill_to_post_code}</div>
+            <div className="text-base ">{invoice?.bill_to_country}</div>
           </div>
 
           <div>
             <div className="text-base text-slate-400">Send to</div>
             <div className="text-xl font-semibold">
-              email@email.com
+              {invoice?.bill_to_client_email}
             </div>
           </div>
         </div>
@@ -119,9 +126,9 @@ export default function InvoiceDetail({ params }) {
           </thead>
           <tbody>
             <tr>
-              <td className="p-4 text-sm font-bold">item.name</td>
-              <td className="p-4 text-sm font-bold text-center w-44">qty</td>
-              <td className="p-4 text-sm font-bold text-center w-44">price</td>
+              <td className="p-4 text-sm font-bold">-</td>
+              <td className="p-4 text-sm font-bold text-center w-44">0</td>
+              <td className="p-4 text-sm font-bold text-center w-44">$ 0.00</td>
               <td className="p-4 text-sm font-bold text-right w-44">$ 0.00</td>
             </tr>
           </tbody>

@@ -36,7 +36,7 @@ export default function InvoiceDetail({ params }) {
         </div>
 
         <div className="flex items-center gap-2">
-          <Link href="/">
+          <Link href={`/invoices/${id}/edit`}>
             <button
               type='button'
               className='rounded-full px-5 py-4 font-semibold min-w-[100px] text-white bg-slate-600'

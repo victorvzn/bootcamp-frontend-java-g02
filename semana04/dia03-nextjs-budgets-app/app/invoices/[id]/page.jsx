@@ -4,9 +4,17 @@ import Link from "next/link"
 
 import BaseTag from "@/components/shared/BaseTag";
 import { TbChevronLeft } from "react-icons/tb";
+import { useEffect, useState } from "react"
+import { getInvoice } from "@/services/invoices";
 
 export default function InvoiceDetail({ params }) {
   const { id } = params
+  const [invoice, setInvoice] = useState()
+
+  useEffect(() => {
+    getInvoice(id)
+      .then(data => setInvoice(data))
+  }, [])
 
   return (
     <section className="container m-auto flex flex-col gap-5">
@@ -98,7 +106,7 @@ export default function InvoiceDetail({ params }) {
           </div>
         </div>
 
-        {/* TODO: Terminar de maquetar esta tabla */}
+        {/* DONE: Terminar de maquetar esta tabla */}
 
         <table className="bg-slate-600 w-full rounded-lg overflow-hidden">
           <thead>
@@ -127,6 +135,8 @@ export default function InvoiceDetail({ params }) {
           </tfoot>
         </table>
       </section>
+
+      <pre className="text-white">{JSON.stringify(invoice, null, 2)}</pre>
 
     </section>
   )

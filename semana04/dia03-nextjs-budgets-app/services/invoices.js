@@ -16,3 +16,20 @@ export const fetchInvoices = async () => {
 
   return await response.json()
 }
+
+export const getInvoice = async (id) => {
+  const url = `${API_URL}/invoices/${id}`
+
+  const token = localStorage.getItem('auth-token')
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await fetch(url, options)
+
+  return await response.json()
+}

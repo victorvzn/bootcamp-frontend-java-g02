@@ -1,21 +1,12 @@
-import { fetchProducts } from "@/services/products"
+import Header from "@/components/Header"
+import ProductList from "@/components/products/ProductList"
 
-export default async function Home() {
-  const productList = await fetchProducts()
-
+export default function Home() {
   return (
     <>
-      <h1 className="text-center text-3xl">
-        Shopping Cart + context
-      </h1>
+      <Header />
 
-      <ul>
-        {productList.map(product => {
-          return (
-            <li>{product.title}</li>
-          )
-        })}
-      </ul>
+      <ProductList />
     </>
   )
 }

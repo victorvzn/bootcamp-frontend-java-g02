@@ -1,4 +1,11 @@
+'use client'
+
+import { CartContext } from "@/context/CartContext"
+import { useContext } from "react"
+
 const ProductItem = ({ product }) => {
+  const { addToCart } = useContext(CartContext)
+
   return (
     <div className="w-full border border-gray-200 rounded-lg min-h-80 shadow">
       <img
@@ -17,7 +24,10 @@ const ProductItem = ({ product }) => {
           <span className="text-3xl font-bold text-gray-900">
             ${product.price}
           </span>
-          <button className="bg-blue-700 hover:bg-blue-800 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+          <button
+            className="bg-blue-700 hover:bg-blue-800 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            onClick={() => addToCart(product)}
+          >
             Add to Cart
           </button>
         </div>

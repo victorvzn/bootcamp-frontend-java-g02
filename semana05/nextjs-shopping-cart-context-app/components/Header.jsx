@@ -15,13 +15,20 @@ const Header = () => {
           Shopping Cart
         </h1>
 
-        <button onClick={() => setOpen(!open)}>Cart</button>
+        {/* TODO: Agregar al lado del button Cart el número de productos en el carrito de compras. */}
+
+        <button className="relative" onClick={() => setOpen(!open)}>
+          Cart
+          <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -left-6 dark:border-gray-900">?</div>
+        </button>
 
         <div
           className={`fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-white w-80 text-black ${open ? 'transform-none' : 'translate-x-full'}`}
         >
           <div className="flex justify-between">
-            <h5 className="flex text-base font-semibold text-gray-500">Cart</h5>
+            <h5 className="flex text-base font-semibold text-gray-500">
+              Cart
+            </h5>
 
             <button onClick={() => setOpen(false)}>❌</button>
           </div>

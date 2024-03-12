@@ -6,7 +6,9 @@ export default function Home() {
     <>
       <Header />
 
-      <ProductList />
+      <main className="py-4 px-6 w-full container mx-auto border pt-20">
+        <ProductList />
+      </main>
     </>
   )
 }

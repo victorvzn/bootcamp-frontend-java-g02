@@ -4,7 +4,7 @@ import { CartContext } from "@/context/CartContext"
 import { useContext, useState } from "react"
 
 const Header = () => {
-  const { cart } = useContext(CartContext)
+  const { cart, removeToCart, cleanCart } = useContext(CartContext)
 
   const [open, setOpen] = useState(false)
 
@@ -26,7 +26,30 @@ const Header = () => {
             <button onClick={() => setOpen(false)}>❌</button>
           </div>
 
-          <pre>{JSON.stringify(cart.map(p => ({ title: p.title })), null, 2)}</pre>
+          <div className="py-3">
+            <button
+              className="w-full text-slate-900 bg-red-400 hover:bg-red-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              onClick={() => cleanCart()}
+            >
+              Clean Cart
+            </button>
+          </div>
+
+          {/* <pre>{JSON.stringify(cart.map(p => ({ title: p.title })), null, 2)}</pre> */}
+
+          <div className="flex flex-col gap-1 mt-4">
+            {cart && cart.map(product => {
+              return (
+                <button
+                  className="text-slate-900 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                  key={product.id}
+                  onClick={() => removeToCart(product.id)}
+                >
+                  {product.title} - ${product.price} (Qty: {product.quantity ?? 0})
+                </button>
+              )
+            })}
+          </div>
         </div>
       </div>
     </header>

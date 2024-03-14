@@ -1,4 +1,7 @@
+import AddToCartButton from "./AddToCartButton"
+
 const ProductItem = ({ product }) => {
+
   return (
     <div className="w-full border border-gray-200 rounded-lg min-h-80 shadow">
       <img
@@ -17,11 +20,7 @@ const ProductItem = ({ product }) => {
           <span className="text-3xl font-bold text-gray-900">
             ${product.price}
           </span>
-          <button
-            className="bg-blue-700 hover:bg-blue-800 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-          >
-            Add to Cart
-          </button>
+          <AddToCartButton product={product} />
         </div>
       </div>
     </div>

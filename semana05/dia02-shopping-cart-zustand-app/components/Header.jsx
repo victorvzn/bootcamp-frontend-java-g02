@@ -1,9 +1,12 @@
 'use client'
 
+import { useCartStore } from '@/store/cart'
 import { useState } from 'react'
 
 const Header = () => {
   const [open, setOpen] = useState(false)
+
+  const { cart } = useCartStore()
 
   return (
     <header className="bg-lime-600 text-white py-4 px-6 fixed w-full">
@@ -14,7 +17,8 @@ const Header = () => {
 
         <button className="relative" onClick={() => setOpen(!open)}>
           Cart
-          <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -left-6 dark:border-gray-900">?</div>
+
+          {cart.length > 0 && <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -left-6 dark:border-gray-900">{cart.length}</div>}
         </button>
 
         <div

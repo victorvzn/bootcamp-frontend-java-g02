@@ -7,8 +7,10 @@ export const useCartStore = create((set) => ({
 
   // Actions
 
-  addToCart: (product) => {
-    console.log(product)
+  addToCart: (newProduct) => {
+    console.log(newProduct)
+
+    set(state => ({ cart: [...state.cart, newProduct] }))
   },
 
   removeFromCart: () => {},

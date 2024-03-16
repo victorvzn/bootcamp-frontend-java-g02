@@ -1,6 +1,12 @@
+import DashboardHeader from "@/components/login-page/Header";
+
 const DashboardPage = () => {
   return (
-    <div>DashboardPage</div>
+    <>
+      <DashboardHeader />
+
+      <div>DashboardPage</div>
+    </>
   )
 }
 

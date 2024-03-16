@@ -1,7 +1,5 @@
 'use client'
 
-import DashboardHeader from "@/components/login-page/Header";
-
 import { useSession } from "next-auth/react";
 
 const DashboardPage = () => {
@@ -9,8 +7,6 @@ const DashboardPage = () => {
 
   return (
     <>
-      <DashboardHeader />
-
       <div className="pt-10">DashboardPage</div>
 
       {session?.user && (

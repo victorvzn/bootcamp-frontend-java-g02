@@ -42,6 +42,8 @@ const LoginHeader = () => {
 
               <Link href="/dashboard">Dashboard</Link>
 
+              <Link href="/dashboard/students">Students</Link>
+
               <button onClick={handleLogout}>Logout</button>
             </>
           ): (

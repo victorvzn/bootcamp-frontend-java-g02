@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 
 import { useSession, signOut } from "next-auth/react"
+import Image from "next/image"
 
 const LoginHeader = () => {
   const { data: session } = useSession()
@@ -23,9 +24,20 @@ const LoginHeader = () => {
           <h1 className="font-bold">Student App</h1>
         </Link>
 
-        <div className="flex gap-4">
+        <div className="flex items-center gap-4">
         {session?.user ? (
           <>
+            <div className="flex items-center gap-4 underline">
+              <Image
+                className="rounded-full bg-white"
+                src={session?.user.avatar}
+                width="30"
+                height="30"
+                alt={session?.user.email}
+              />
+              <span>Hi, {session ? session?.user.email : 'Anon'}</span>
+            </div>
+
             <Link href="/dashboard">Dashboard</Link>
 
             <button onClick={handleLogout}>Logout</button>

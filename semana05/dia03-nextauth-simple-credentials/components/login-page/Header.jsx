@@ -1,5 +1,7 @@
 'use client'
 
+// TODO: Agregar la página de registro de usuario tal como se hizo el login.
+
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 
@@ -25,30 +27,29 @@ const LoginHeader = () => {
         </Link>
 
         <div className="flex items-center gap-4">
-        {session?.user ? (
-          <>
-            <div className="flex items-center gap-4 underline">
-              <Image
-                className="rounded-full bg-white"
-                src={session?.user.avatar}
-                width="30"
-                height="30"
-                alt={session?.user.email}
-              />
-              <span>Hi, {session ? session?.user.email : 'Anon'}</span>
-            </div>
+          {session?.user ? (
+            <>
+              <div className="flex items-center gap-4 underline">
+                <Image
+                  className="rounded-full bg-white"
+                  src={session?.user.avatar}
+                  width="30"
+                  height="30"
+                  alt={session?.user.email}
+                />
+                <span>Hi, {session ? session?.user.email : 'Anon'}</span>
+              </div>
 
-            <Link href="/dashboard">Dashboard</Link>
+              <Link href="/dashboard">Dashboard</Link>
 
-            <button onClick={handleLogout}>Logout</button>
-          </>
-        ): (
-          <>
-            <Link href="/">Login</Link>
-            <Link href="/register">Register</Link>
-          </>
-        )}
-
+              <button onClick={handleLogout}>Logout</button>
+            </>
+          ): (
+            <>
+              <Link href="/">Login</Link>
+              <Link href="/register">Register</Link>
+            </>
+          )}
         </div>
       </div>
     </header>

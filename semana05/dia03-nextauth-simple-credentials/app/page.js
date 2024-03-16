@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 
-import { signIn } from "next-auth/react"
+import { signIn, useSession, signOut } from "next-auth/react"
 
 export default function Home() {
+  const { data: session } = useSession()
+
   const [form, setForm] = useState({
     email: '',
     password: ''
@@ -25,18 +27,27 @@ export default function Home() {
   }
 
   return (
-    <form onSubmit={handleLogin}>
-      <input
-        type="email"
-        onChange={(event) => setForm(prev => ({ ...prev, email: event.target.value }))}
-        value={form.email}
-      />
-      <input
-        type="password"
-        onChange={(event) => setForm(prev => ({ ...prev, password: event.target.value }))}
-        value={form.password}
-      />
-      <button>Login</button>
-    </form>
+    <>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          onChange={(event) => setForm(prev => ({ ...prev, email: event.target.value }))}
+          value={form.email}
+        />
+        <input
+          type="password"
+          onChange={(event) => setForm(prev => ({ ...prev, password: event.target.value }))}
+          value={form.password}
+        />
+        <button>Login</button>
+      </form>
+
+      {session && (
+        <div>
+          {JSON.stringify(session)}
+          <button onClick={signOut} className="text-red-500">Logout</button>
+        </div>
+      )}
+    </>
   );
 }

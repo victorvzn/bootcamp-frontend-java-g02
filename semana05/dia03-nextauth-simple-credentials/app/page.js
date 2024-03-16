@@ -42,7 +42,7 @@ export default function Home() {
         <button>Login</button>
       </form>
 
-      {session && (
+      {session?.user && (
         <div>
           {JSON.stringify(session)}
           <button onClick={signOut} className="text-red-500">Logout</button>

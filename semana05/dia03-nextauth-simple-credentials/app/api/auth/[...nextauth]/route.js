@@ -12,7 +12,7 @@ export const authOptions = {
       async authorize (credentials, req) {
         // Aquí es donde haremos el llamdao al endpoint de autenticación
         return {
-          email: 'victor@gmail.com'
+          email: 'victortest@gmail.com'
         }
       }
     }),

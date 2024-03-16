@@ -42,7 +42,10 @@ export const authOptions = {
       session.user = token
 
       return session
-    }
+    },
+  },
+  pages: {
+    signIn: '/'
   }
 }
 

@@ -1,0 +1,24 @@
+### Login
+POST https://mockmentor.4.us-1.fl0.io/auth/login
+Content-Type: application/json
+
+{
+  "email": "avillazon@budgetapp.com",
+  "password": "Welcome@987"
+}
+
+### Recuperar los students de un usuario que hizo login
+GET https://mockmentor.4.us-1.fl0.io/api/v1/students
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJlbWFpbCI6ImF2aWxsYXpvbkBidWRnZXRhcHAuY29tIiwiaWF0IjoxNzEwNTYxNTE3LCJleHAiOjE3MTA1NjUxMTd9.6SFVEsV8Z9EiRqupzzqLRgWF5CLIFw6cSzI9km1J89I
+
+### Creamos una nueva student
+POST https://mockmentor.4.us-1.fl0.io/api/v1/students
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYmJiZjJhNC1lMzMxLTQ2MDEtYmJkMS0zZWRkZmZmNDM5M2YiLCJlbWFpbCI6ImF2aWxsYXpvbkBidWRnZXRhcHAuY29tIiwiaWF0IjoxNzEwNTYxNTE3LCJleHAiOjE3MTA1NjUxMTd9.6SFVEsV8Z9EiRqupzzqLRgWF5CLIFw6cSzI9km1J89I
+
+{
+  "fullname": "Test3",
+  "email": "test3@mail.com",
+  "note": 20
+}

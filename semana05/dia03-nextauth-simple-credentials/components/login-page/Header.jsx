@@ -1,7 +1,5 @@
 'use client'
 
-// TODO: Agregar la página de registro de usuario tal como se hizo el login.
-
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 

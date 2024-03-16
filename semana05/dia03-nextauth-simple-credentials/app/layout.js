@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         {/* contexto -> sesion del usuario, funciones para hacer login, para hacer logout... */}
         <SessionAuthProvider>
           {children}

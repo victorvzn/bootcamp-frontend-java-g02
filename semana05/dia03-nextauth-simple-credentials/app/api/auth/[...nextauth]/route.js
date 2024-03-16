@@ -12,8 +12,8 @@ export const authOptions = {
       async authorize (credentials, req) {
         // Aquí es donde haremos el llamdao al endpoint de autenticación
         // console.log(credentials)
-        const API_URL = 'https://mockmentor.4.us-1.fl0.io'
-
+        const API_URL = process.env.NEXT_PUBLIC_API_URL
+        
         const { email, password } = credentials
 
         const options = { 
